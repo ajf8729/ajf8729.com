@@ -39,4 +39,9 @@ Invoke-RestMethod -Uri "https://raw.githubusercontent.com/ajf8729/dotfiles/main/
 Write-Host "Downloading SSH private key..."
 scp ajf@anthonyfontanez.com:.ssh\id_rsa "$env:USERPROFILE\.ssh\id_rsa"
 
+#Enable SSH agent
+Write-Host "Enabling/starting SSH agent service..."
+Set-Service -Name ssh-agent -StartupType Automatic
+Start-Service -Name ssh-agent
+
 Write-Host "All done!"
