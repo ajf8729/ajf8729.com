@@ -33,7 +33,8 @@ Write-Host "Setting GIT_SSH..."
 
 # Download PowerShell profile
 Write-Host "Downloading PowerShell profile..."
-Invoke-RestMethod -Uri "https://raw.githubusercontent.com/ajf8729/dotfiles/main/Microsoft.PowerShell_profile.ps1" | Out-File -LiteralPath $PROFILE -Force
+New-Item -Path $PROFILE -Force | Out-Null
+Invoke-RestMethod -Uri "https://raw.githubusercontent.com/ajf8729/dotfiles/main/Microsoft.PowerShell_profile.ps1" | Out-File -FilePath $PROFILE -Force
 
 # Download private key
 Write-Host "Downloading SSH private key..."
