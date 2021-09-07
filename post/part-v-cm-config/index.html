@@ -1,7 +1,38 @@
 <!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Part V: ConfigMgr - Configuration">
 <meta name=twitter:image content="https://ajf8729.com/icon.png">
+<title>Part V: ConfigMgr - Configuration - AJF8729</title>
+<meta name=description content="Configure ConfigMgr site  https://github.com/ajf8729/Lab/blob/main/04-ConfigureCM.ps1   Create OU-based collections  https://github.com/ajf8729/Lab/blob/main/05-CreateOUCollectionStructure.ps1   Install CM client on LABCM01  &#34;F:\Program Files\Microsoft Configuration Manager\Client\ccmsetup.exe&#34;   Configure Client Settings  New-CMClientSetting -Name &#34;LAB Default Client Settings&#34; -Type Device New-CMClientSettingDeployment -Name &#34;LAB Default Client Settings&#34; -CollectionName &#34;All Systems&#34; Edit &ldquo;LAB Default Client Settings&rdquo;  Computer Agent  Organization name PowerShell execution policy   Software Center  Company name Color scheme Foreground color Disable &ldquo;Hide installed applications&rdquo; Enable &ldquo;Hide Application Catalog&rdquo;   Software Updates  Enable software updates Enable third party software updates       Install/Configure Software Update Point  https://github.">
+<meta name=author content>
+<link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
+<link rel="preload stylesheet" as=style href=https://ajf8729.com/an-old-hope.min.css>
+<script defer src=https://ajf8729.com/highlight.min.js onload=hljs.initHighlightingOnLoad()></script>
+<link rel=preload as=image href=https://ajf8729.com/theme.png>
+<link rel=preload as=image href=https://ajf8729.com/twitter.svg>
+<link rel=preload as=image href=https://ajf8729.com/github.svg>
+<link rel=icon href=https://ajf8729.com/favicon.ico>
+<link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
+<meta name=generator content="Hugo 0.88.1">
+<meta property="og:title" content="Part V: ConfigMgr - Configuration">
+<meta property="og:description" content="Configure ConfigMgr site  https://github.com/ajf8729/Lab/blob/main/04-ConfigureCM.ps1   Create OU-based collections  https://github.com/ajf8729/Lab/blob/main/05-CreateOUCollectionStructure.ps1   Install CM client on LABCM01  &#34;F:\Program Files\Microsoft Configuration Manager\Client\ccmsetup.exe&#34;   Configure Client Settings  New-CMClientSetting -Name &#34;LAB Default Client Settings&#34; -Type Device New-CMClientSettingDeployment -Name &#34;LAB Default Client Settings&#34; -CollectionName &#34;All Systems&#34; Edit &ldquo;LAB Default Client Settings&rdquo;  Computer Agent  Organization name PowerShell execution policy   Software Center  Company name Color scheme Foreground color Disable &ldquo;Hide installed applications&rdquo; Enable &ldquo;Hide Application Catalog&rdquo;   Software Updates  Enable software updates Enable third party software updates       Install/Configure Software Update Point  https://github.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ajf8729.com/post/part-v-cm-config/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2021-08-30T13:00:00-04:00">
+<meta property="article:modified_time" content="2021-08-30T13:00:00-04:00">
+<meta itemprop=name content="Part V: ConfigMgr - Configuration">
+<meta itemprop=description content="Configure ConfigMgr site  https://github.com/ajf8729/Lab/blob/main/04-ConfigureCM.ps1   Create OU-based collections  https://github.com/ajf8729/Lab/blob/main/05-CreateOUCollectionStructure.ps1   Install CM client on LABCM01  &#34;F:\Program Files\Microsoft Configuration Manager\Client\ccmsetup.exe&#34;   Configure Client Settings  New-CMClientSetting -Name &#34;LAB Default Client Settings&#34; -Type Device New-CMClientSettingDeployment -Name &#34;LAB Default Client Settings&#34; -CollectionName &#34;All Systems&#34; Edit &ldquo;LAB Default Client Settings&rdquo;  Computer Agent  Organization name PowerShell execution policy   Software Center  Company name Color scheme Foreground color Disable &ldquo;Hide installed applications&rdquo; Enable &ldquo;Hide Application Catalog&rdquo;   Software Updates  Enable software updates Enable third party software updates       Install/Configure Software Update Point  https://github."><meta itemprop=datePublished content="2021-08-30T13:00:00-04:00">
+<meta itemprop=dateModified content="2021-08-30T13:00:00-04:00">
+<meta itemprop=wordCount content="85">
+<meta itemprop=keywords content>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Part V: ConfigMgr - Configuration">
+<meta name=twitter:description content="Configure ConfigMgr site  https://github.com/ajf8729/Lab/blob/main/04-ConfigureCM.ps1   Create OU-based collections  https://github.com/ajf8729/Lab/blob/main/05-CreateOUCollectionStructure.ps1   Install CM client on LABCM01  &#34;F:\Program Files\Microsoft Configuration Manager\Client\ccmsetup.exe&#34;   Configure Client Settings  New-CMClientSetting -Name &#34;LAB Default Client Settings&#34; -Type Device New-CMClientSettingDeployment -Name &#34;LAB Default Client Settings&#34; -CollectionName &#34;All Systems&#34; Edit &ldquo;LAB Default Client Settings&rdquo;  Computer Agent  Organization name PowerShell execution policy   Software Center  Company name Color scheme Foreground color Disable &ldquo;Hide installed applications&rdquo; Enable &ldquo;Hide Application Catalog&rdquo;   Software Updates  Enable software updates Enable third party software updates       Install/Configure Software Update Point  https://github.">
+</head>
 <body class=not-ready data-menu=true>
 <header class=header>
 <p class=logo>

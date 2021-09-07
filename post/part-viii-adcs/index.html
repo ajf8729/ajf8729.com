@@ -1,7 +1,38 @@
 <!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Part VIII: Active Directory Certificate Services">
 <meta name=twitter:image content="https://ajf8729.com/icon.png">
+<title>Part VIII: Active Directory Certificate Services - AJF8729</title>
+<meta name=description content=" Install enterprise root CA and web enrollment  https://github.com/ajf8729/Lab/blob/main/11-Configure-ADCS.ps1   Configure templates  Create endpoint template  Duplicate &ldquo;Workstation Authentication&rdquo; template Duplicate &ldquo;Kerberos Authentication&rdquo; template   Configure new templates for issuing   Configure certificate autoenrollment  GPO: lab.ajf8729.com   Verify certificate enrollment on LABDC01A and LABCM01  ">
+<meta name=author content>
+<link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
+<link rel="preload stylesheet" as=style href=https://ajf8729.com/an-old-hope.min.css>
+<script defer src=https://ajf8729.com/highlight.min.js onload=hljs.initHighlightingOnLoad()></script>
+<link rel=preload as=image href=https://ajf8729.com/theme.png>
+<link rel=preload as=image href=https://ajf8729.com/twitter.svg>
+<link rel=preload as=image href=https://ajf8729.com/github.svg>
+<link rel=icon href=https://ajf8729.com/favicon.ico>
+<link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
+<meta name=generator content="Hugo 0.88.1">
+<meta property="og:title" content="Part VIII: Active Directory Certificate Services">
+<meta property="og:description" content=" Install enterprise root CA and web enrollment  https://github.com/ajf8729/Lab/blob/main/11-Configure-ADCS.ps1   Configure templates  Create endpoint template  Duplicate &ldquo;Workstation Authentication&rdquo; template Duplicate &ldquo;Kerberos Authentication&rdquo; template   Configure new templates for issuing   Configure certificate autoenrollment  GPO: lab.ajf8729.com   Verify certificate enrollment on LABDC01A and LABCM01  ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ajf8729.com/post/part-viii-adcs/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2021-09-01T15:00:00-04:00">
+<meta property="article:modified_time" content="2021-09-01T15:00:00-04:00">
+<meta itemprop=name content="Part VIII: Active Directory Certificate Services">
+<meta itemprop=description content=" Install enterprise root CA and web enrollment  https://github.com/ajf8729/Lab/blob/main/11-Configure-ADCS.ps1   Configure templates  Create endpoint template  Duplicate &ldquo;Workstation Authentication&rdquo; template Duplicate &ldquo;Kerberos Authentication&rdquo; template   Configure new templates for issuing   Configure certificate autoenrollment  GPO: lab.ajf8729.com   Verify certificate enrollment on LABDC01A and LABCM01  "><meta itemprop=datePublished content="2021-09-01T15:00:00-04:00">
+<meta itemprop=dateModified content="2021-09-01T15:00:00-04:00">
+<meta itemprop=wordCount content="38">
+<meta itemprop=keywords content>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Part VIII: Active Directory Certificate Services">
+<meta name=twitter:description content=" Install enterprise root CA and web enrollment  https://github.com/ajf8729/Lab/blob/main/11-Configure-ADCS.ps1   Configure templates  Create endpoint template  Duplicate &ldquo;Workstation Authentication&rdquo; template Duplicate &ldquo;Kerberos Authentication&rdquo; template   Configure new templates for issuing   Configure certificate autoenrollment  GPO: lab.ajf8729.com   Verify certificate enrollment on LABDC01A and LABCM01  ">
+</head>
 <body class=not-ready data-menu=true>
 <header class=header>
 <p class=logo>
