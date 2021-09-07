@@ -1,35 +1,7 @@
 <!doctype html><html lang=en-us>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<title>Part III: ConfigMgr - SQL Installation - AJF8729</title>
-<meta name=description content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks  Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null   Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs.">
-<meta name=author content>
-<link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
-<link rel="preload stylesheet" as=style href=https://ajf8729.com/an-old-hope.min.css>
-<script defer src=https://ajf8729.com/highlight.min.js onload=hljs.initHighlightingOnLoad()></script>
-<link rel=preload as=image href=https://ajf8729.com/theme.png>
-<link rel=preload as=image href=https://ajf8729.com/twitter.svg>
-<link rel=preload as=image href=https://ajf8729.com/github.svg>
-<link rel=icon href=https://ajf8729.com/favicon.ico>
-<link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
-<meta name=generator content="Hugo 0.88.1">
-<meta property="og:title" content="Part III: ConfigMgr - SQL Installation">
-<meta property="og:description" content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks  Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null   Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://ajf8729.com/post/part-iii-cm-sql/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2021-08-29T13:00:00-04:00">
-<meta property="article:modified_time" content="2021-08-29T13:00:00-04:00">
-<meta itemprop=name content="Part III: ConfigMgr - SQL Installation">
-<meta itemprop=description content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks  Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null   Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs."><meta itemprop=datePublished content="2021-08-29T13:00:00-04:00">
-<meta itemprop=dateModified content="2021-08-29T13:00:00-04:00">
-<meta itemprop=wordCount content="166">
-<meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Part III: ConfigMgr - SQL Installation">
-<meta name=twitter:description content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks  Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null   Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs.">
-</head>
+<meta name=twitter:image content="https://ajf8729.com/icon.png">
 <body class=not-ready data-menu=true>
 <header class=header>
 <p class=logo>
