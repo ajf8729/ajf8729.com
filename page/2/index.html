@@ -34,7 +34,8 @@
 <script>let bodyClx=document.body.classList,btnDark=document.querySelector('.btn-dark'),sysDark=window.matchMedia('(prefers-color-scheme: dark)'),darkVal=localStorage.getItem('dark'),setDark=a=>{bodyClx[a?'add':'remove']('dark'),localStorage.setItem('dark',a?'yes':'no')};setDark(darkVal?darkVal==='yes':sysDark.matches),requestAnimationFrame(()=>bodyClx.remove('not-ready')),btnDark.addEventListener('click',()=>setDark(!bodyClx.contains('dark'))),sysDark.addEventListener('change',a=>setDark(a.matches))</script>
 <nav class=menu>
 <a href=/about/>About</a>
-<a href=/resume/>Resume</a>
+<a href=/post/>Posts</a>
+<a href=/guide/>Guides</a>
 <a href=/lab-configuration/>Lab Configuration</a>
 </nav>
 <nav class=social>
@@ -44,9 +45,29 @@
 </header>
 <main class=main>
 <article class=post-entry>
+<h2>Part V: ConfigMgr - Configuration</h2>
+<time>August 30, 2021</time>
+<a href=https://ajf8729.com/guide/part-v-cm-config/></a>
+</article>
+<article class=post-entry>
+<h2>Part IV: ConfigMgr - Prerequisites & Site Installation</h2>
+<time>August 29, 2021</time>
+<a href=https://ajf8729.com/guide/part-iv-cm-install/></a>
+</article>
+<article class=post-entry>
+<h2>Part III: ConfigMgr - SQL Installation</h2>
+<time>August 29, 2021</time>
+<a href=https://ajf8729.com/guide/part-iii-cm-sql/></a>
+</article>
+<article class=post-entry>
+<h2>Part II: Active Directory - Installation & Configuration</h2>
+<time>August 28, 2021</time>
+<a href=https://ajf8729.com/guide/part-ii-ad-install-config/></a>
+</article>
+<article class=post-entry>
 <h2>Part I: Initial VM Setup</h2>
 <time>August 28, 2021</time>
-<a href=https://ajf8729.com/post/part-i-initial-vm-setup/></a>
+<a href=https://ajf8729.com/guide/part-i-initial-vm-setup/></a>
 </article>
 <nav class=main-nav>
 <a class=prev href=/>← Prev Page</a>

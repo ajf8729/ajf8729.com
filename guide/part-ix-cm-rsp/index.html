@@ -21,7 +21,7 @@
 <meta property="og:title" content="Part IX: ConfigMgr - Reporting Services Point Configuration">
 <meta property="og:description" content="Download SQL Server Reporting Services  https://docs.microsoft.com/sql/reporting-services/install-windows/install-reporting-services https://www.microsoft.com/download/details.aspx?id=100122   Prepare gMSA for SSRS  New-ADServiceAccount -Name svc_CM_SSRS -SamAccountName svc_CM_SSRS -DNSHostName adcm01.ad.ajf8729.com -KerberosEncryptionType AES128,AES256 -Path &#34;OU=CM,OU=Servers,OU=AJF8729,DC=ad,DC=ajf8729,DC=com&#34; -PrincipalsAllowedToRetrieveManagedPassword (Get-ADGroup -Identity CM_Servers) Install-ADServiceAccount -Identity svc_CM_SSRS Test-ADServiceAccount -Identity svc_CM_SSRS Restart-Computer Grant gMSA &ldquo;Log on as a service&rdquo; URA in ConfigMgr GPO   Install SSRS  SQLServerReportingServices.exe /passive /norestart /InstallFolder=&#34;E:\Program Files\Microsoft SQL Server Reporting Services&#34; /IAcceptLicenseTerms /Edition=Dev   Configure SSRS  Launch &ldquo;Report Server Configuration Manager&rdquo; Connect to the report server instance &ldquo;SSRS&rdquo; Configure the service account as AD\svc_CM_SSRS$ Configure the database, accepting all defaults Configure the Web Service URL Configure the Web Portal URL Verify URLs are accessible  https://adcm01.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://ajf8729.com/post/part-ix-cm-rsp/"><meta property="article:section" content="post">
+<meta property="og:url" content="https://ajf8729.com/guide/part-ix-cm-rsp/"><meta property="article:section" content="guide">
 <meta property="article:published_time" content="2021-09-04T15:00:00-04:00">
 <meta property="article:modified_time" content="2021-09-04T15:00:00-04:00">
 <meta itemprop=name content="Part IX: ConfigMgr - Reporting Services Point Configuration">
@@ -41,7 +41,8 @@
 <script>let bodyClx=document.body.classList,btnDark=document.querySelector('.btn-dark'),sysDark=window.matchMedia('(prefers-color-scheme: dark)'),darkVal=localStorage.getItem('dark'),setDark=a=>{bodyClx[a?'add':'remove']('dark'),localStorage.setItem('dark',a?'yes':'no')};setDark(darkVal?darkVal==='yes':sysDark.matches),requestAnimationFrame(()=>bodyClx.remove('not-ready')),btnDark.addEventListener('click',()=>setDark(!bodyClx.contains('dark'))),sysDark.addEventListener('change',a=>setDark(a.matches))</script>
 <nav class=menu>
 <a href=/about/>About</a>
-<a href=/resume/>Resume</a>
+<a href=/post/>Posts</a>
+<a href=/guide/>Guides</a>
 <a href=/lab-configuration/>Lab Configuration</a>
 </nav>
 <nav class=social>
@@ -108,8 +109,8 @@
 </ol>
 </section>
 <nav class=post-nav>
-<a class=prev href=https://ajf8729.com/post/how-to-upgrade-configmgr/><span>←</span><span>How to Upgrade ConfigMgr</span></a>
-<a class=next href=https://ajf8729.com/post/part-viii-adcs/><span>Part VIII: Active Directory Certificate Services</span><span>→</span></a>
+<a class=prev href=https://ajf8729.com/guide/part-x-cm-dw/><span>←</span><span>Part X: ConfigMgr - Data Warehouse Service Point Configuration</span></a>
+<a class=next href=https://ajf8729.com/guide/part-viii-adcs/><span>Part VIII: Active Directory Certificate Services</span><span>→</span></a>
 </nav>
 </article>
 </main>
