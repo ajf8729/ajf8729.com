@@ -1,3 +1,6 @@
+# Enable TLS 1.2
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 # Prep folders
 Write-Host "Creating folders..."
 if (-not (Test-Path -Path "$env:USERPROFILE\.ssh")) {
