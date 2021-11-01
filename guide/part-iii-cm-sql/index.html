@@ -10,7 +10,7 @@
 <meta name=description content="Update DNS servers
  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)    Domain join
  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart    Configure disks
-Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null">
+Get-Disk | ?{$.OperationalStatus -eq &ldquo;Offline&rdquo;} | Set-Disk -IsOffline $false Get-Disk | ?{$.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &ldquo;E&rdquo; -FriendlyName &ldquo;SQL&rdquo; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &ldquo;F&rdquo; -FriendlyName &ldquo;CM&rdquo; | Out-Null New-Item -Path &ldquo;F:&#34; -Name &ldquo;SOURCE&rdquo; -ItemType Directory | Out-Null">
 <meta name=author content>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/an-old-hope.min.css>
@@ -25,7 +25,7 @@ Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $
 <meta property="og:description" content="Update DNS servers
  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)    Domain join
  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart    Configure disks
-Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null">
+Get-Disk | ?{$.OperationalStatus -eq &ldquo;Offline&rdquo;} | Set-Disk -IsOffline $false Get-Disk | ?{$.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &ldquo;E&rdquo; -FriendlyName &ldquo;SQL&rdquo; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &ldquo;F&rdquo; -FriendlyName &ldquo;CM&rdquo; | Out-Null New-Item -Path &ldquo;F:&#34; -Name &ldquo;SOURCE&rdquo; -ItemType Directory | Out-Null">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ajf8729.com/guide/part-iii-cm-sql/"><meta property="article:section" content="guide">
 <meta property="article:published_time" content="2021-08-29T13:00:00-04:00">
@@ -34,7 +34,7 @@ Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $
 <meta itemprop=description content="Update DNS servers
  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)    Domain join
  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart    Configure disks
-Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null"><meta itemprop=datePublished content="2021-08-29T13:00:00-04:00">
+Get-Disk | ?{$.OperationalStatus -eq &ldquo;Offline&rdquo;} | Set-Disk -IsOffline $false Get-Disk | ?{$.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &ldquo;E&rdquo; -FriendlyName &ldquo;SQL&rdquo; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &ldquo;F&rdquo; -FriendlyName &ldquo;CM&rdquo; | Out-Null New-Item -Path &ldquo;F:&#34; -Name &ldquo;SOURCE&rdquo; -ItemType Directory | Out-Null"><meta itemprop=datePublished content="2021-08-29T13:00:00-04:00">
 <meta itemprop=dateModified content="2021-08-29T13:00:00-04:00">
 <meta itemprop=wordCount content="166">
 <meta itemprop=keywords content>
@@ -43,7 +43,7 @@ Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $
 <meta name=twitter:description content="Update DNS servers
  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)    Domain join
  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart    Configure disks
-Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null">
+Get-Disk | ?{$.OperationalStatus -eq &ldquo;Offline&rdquo;} | Set-Disk -IsOffline $false Get-Disk | ?{$.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &ldquo;E&rdquo; -FriendlyName &ldquo;SQL&rdquo; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &ldquo;F&rdquo; -FriendlyName &ldquo;CM&rdquo; | Out-Null New-Item -Path &ldquo;F:&#34; -Name &ldquo;SOURCE&rdquo; -ItemType Directory | Out-Null">
 </head>
 <body class=not-ready data-menu=true>
 <header class=header>
@@ -86,11 +86,11 @@ Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $
 </li>
 <li>
 <p>Configure disks</p>
-<p><code>Get-Disk | ?{$_.OperationalStatus -eq "Offline"} | Set-Disk -IsOffline $false</code>
-<code>Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT</code>
-<code>New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter "E" -FriendlyName "SQL" | Out-Null</code>
-<code>New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter "F" -FriendlyName "CM" | Out-Null</code>
-<code>New-Item -Path "F:\" -Name "SOURCE" -ItemType Directory | Out-Null</code></p>
+<p>Get-Disk | ?{$<em>.OperationalStatus -eq &ldquo;Offline&rdquo;} | Set-Disk -IsOffline $false
+Get-Disk | ?{$</em>.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT
+New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &ldquo;E&rdquo; -FriendlyName &ldquo;SQL&rdquo; | Out-Null
+New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &ldquo;F&rdquo; -FriendlyName &ldquo;CM&rdquo; | Out-Null
+New-Item -Path &ldquo;F:" -Name &ldquo;SOURCE&rdquo; -ItemType Directory | Out-Null</p>
 </li>
 <li>
 <p>Install RSAT tools</p>
