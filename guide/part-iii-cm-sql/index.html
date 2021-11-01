@@ -7,7 +7,10 @@
 <meta name=twitter:title content="Part III: ConfigMgr - SQL Installation">
 <meta name=twitter:image content="https://ajf8729.com/icon.png">
 <title>Part III: ConfigMgr - SQL Installation - AJF8729</title>
-<meta name=description content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs.">
+<meta name=description content="Update DNS servers
+ Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)    Domain join
+ Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart    Configure disks
+Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null">
 <meta name=author content>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/an-old-hope.min.css>
@@ -19,19 +22,28 @@
 <link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
 <meta name=generator content="Hugo 0.88.1">
 <meta property="og:title" content="Part III: ConfigMgr - SQL Installation">
-<meta property="og:description" content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs.">
+<meta property="og:description" content="Update DNS servers
+ Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)    Domain join
+ Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart    Configure disks
+Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ajf8729.com/guide/part-iii-cm-sql/"><meta property="article:section" content="guide">
 <meta property="article:published_time" content="2021-08-29T13:00:00-04:00">
 <meta property="article:modified_time" content="2021-08-29T13:00:00-04:00">
 <meta itemprop=name content="Part III: ConfigMgr - SQL Installation">
-<meta itemprop=description content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs."><meta itemprop=datePublished content="2021-08-29T13:00:00-04:00">
+<meta itemprop=description content="Update DNS servers
+ Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)    Domain join
+ Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart    Configure disks
+Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null"><meta itemprop=datePublished content="2021-08-29T13:00:00-04:00">
 <meta itemprop=dateModified content="2021-08-29T13:00:00-04:00">
 <meta itemprop=wordCount content="166">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Part III: ConfigMgr - SQL Installation">
-<meta name=twitter:description content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs.">
+<meta name=twitter:description content="Update DNS servers
+ Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)    Domain join
+ Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart    Configure disks
+Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null">
 </head>
 <body class=not-ready data-menu=true>
 <header class=header>
@@ -60,34 +72,41 @@
 <h1>Part III: ConfigMgr - SQL Installation</h1>
 </header>
 <section class=post-content><ol>
-<li>Update DNS servers
+<li>
+<p>Update DNS servers</p>
 <ul>
 <li><code>Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @("172.20.1.51")</code></li>
 </ul>
 </li>
-<li>Domain join
+<li>
+<p>Domain join</p>
 <ul>
 <li><code>Add-Computer -DomainName "lab.ajf8729.com" -Restart</code></li>
 </ul>
 </li>
-<li>Configure disks
-<code>Get-Disk | ?{$_.OperationalStatus -eq "Offline"} | Set-Disk -IsOffline $false</code>
+<li>
+<p>Configure disks</p>
+<p><code>Get-Disk | ?{$_.OperationalStatus -eq "Offline"} | Set-Disk -IsOffline $false</code>
 <code>Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT</code>
 <code>New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter "E" -FriendlyName "SQL" | Out-Null</code>
 <code>New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter "F" -FriendlyName "CM" | Out-Null</code>
-<code>New-Item -Path "F:\" -Name "SOURCE" -ItemType Directory | Out-Null</code></li>
-<li>Install RSAT tools
+<code>New-Item -Path "F:\" -Name "SOURCE" -ItemType Directory | Out-Null</code></p>
+</li>
+<li>
+<p>Install RSAT tools</p>
 <ul>
 <li><code>Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC</code></li>
 </ul>
 </li>
-<li>Install gMSA
+<li>
+<p>Install gMSA</p>
 <ul>
 <li><code>Install-ADServiceAccount -Identity "svc_CM_SQL"</code></li>
 <li><code>Restart-Computer</code></li>
 </ul>
 </li>
-<li>Stage media
+<li>
+<p>Stage media</p>
 <ul>
 <li>Windows ADK
 <ul>
@@ -124,23 +143,30 @@
 </li>
 </ul>
 </li>
-<li>Install SQL Server 2019
+<li>
+<p>Install SQL Server 2019</p>
 <ul>
 <li><code>setup.exe /IAcceptSQLServerLicenseTerms /ConfigurationFile="F:\SOURCE\SQLConfig.ini"</code></li>
 </ul>
 </li>
-<li>Install SQL Server 2019 LCU
+<li>
+<p>Install SQL Server 2019 LCU</p>
 <ul>
 <li><code>SQLServer2019-KB5004524-x64.exe /qs /IAcceptSQLServerLicenseTerms /Action=Patch /AllInstances</code></li>
 </ul>
 </li>
-<li>Install SQL Server Management Studio
+<li>
+<p>Install SQL Server Management Studio</p>
 <ul>
 <li><code>SSMS-Setup-ENU.exe /install /passive</code></li>
 </ul>
 </li>
-<li>Restart LABCM01</li>
-<li>Set SQL maximum memory usage to 1 GB & restart service</li>
+<li>
+<p>Restart LABCM01</p>
+</li>
+<li>
+<p>Set SQL maximum memory usage to 1 GB & restart service</p>
+</li>
 </ol>
 </section>
 <nav class=post-nav>
