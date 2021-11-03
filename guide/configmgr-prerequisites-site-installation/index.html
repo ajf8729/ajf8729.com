@@ -4,9 +4,9 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Part IV: ConfigMgr - Prerequisites & Site Installation">
+<meta name=twitter:title content="ConfigMgr - Prerequisites and Site Installation">
 <meta name=twitter:image content="https://ajf8729.com/icon.png">
-<title>Part IV: ConfigMgr - Prerequisites & Site Installation - AJF8729</title>
+<title>ConfigMgr - Prerequisites and Site Installation - AJF8729</title>
 <meta name=description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
 <meta name=author content>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
@@ -18,19 +18,16 @@
 <link rel=icon href=https://ajf8729.com/favicon.ico>
 <link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
 <meta name=generator content="Hugo 0.89.0">
-<meta property="og:title" content="Part IV: ConfigMgr - Prerequisites & Site Installation">
+<meta property="og:title" content="ConfigMgr - Prerequisites and Site Installation">
 <meta property="og:description" content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://ajf8729.com/guide/part-iv-cm-install/"><meta property="article:section" content="guide">
-<meta property="article:published_time" content="2021-08-29T15:00:00-04:00">
-<meta property="article:modified_time" content="2021-08-29T15:00:00-04:00">
-<meta itemprop=name content="Part IV: ConfigMgr - Prerequisites & Site Installation">
-<meta itemprop=description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde."><meta itemprop=datePublished content="2021-08-29T15:00:00-04:00">
-<meta itemprop=dateModified content="2021-08-29T15:00:00-04:00">
+<meta property="og:url" content="https://ajf8729.com/guide/configmgr-prerequisites-site-installation/"><meta property="article:section" content="guide">
+<meta itemprop=name content="ConfigMgr - Prerequisites and Site Installation">
+<meta itemprop=description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
 <meta itemprop=wordCount content="133">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Part IV: ConfigMgr - Prerequisites & Site Installation">
+<meta name=twitter:title content="ConfigMgr - Prerequisites and Site Installation">
 <meta name=twitter:description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
 </head>
 <body class=not-ready data-menu=true>
@@ -55,9 +52,9 @@
 <article class=post-single>
 <header class=post-title>
 <aside>
-<time>August 29, 2021</time>
+<time>January 1, 0001</time>
 </aside>
-<h1>Part IV: ConfigMgr - Prerequisites & Site Installation</h1>
+<h1>ConfigMgr - Prerequisites and Site Installation</h1>
 </header>
 <section class=post-content><ol>
 <li>Create NO_SMS_ON_DRIVE.SMS files
@@ -117,8 +114,8 @@
 </ol>
 </section>
 <nav class=post-nav>
-<a class=prev href=https://ajf8729.com/guide/part-v-cm-config/><span>←</span><span>Part V: ConfigMgr - Configuration</span></a>
-<a class=next href=https://ajf8729.com/guide/part-iii-cm-sql/><span>Part III: ConfigMgr - SQL Installation</span><span>→</span></a>
+<a class=prev href=https://ajf8729.com/guide/configmgr-data-warehouse-service-point/><span>←</span><span>ConfigMgr - Data Warehouse Service Point</span></a>
+<a class=next href=https://ajf8729.com/guide/configmgr-reporting-services-point/><span>ConfigMgr - Reporting Services Point</span><span>→</span></a>
 </nav>
 </article>
 </main>
