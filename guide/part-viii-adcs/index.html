@@ -7,7 +7,7 @@
 <meta name=twitter:title content="Part VIII: Active Directory Certificate Services">
 <meta name=twitter:image content="https://ajf8729.com/icon.png">
 <title>Part VIII: Active Directory Certificate Services - AJF8729</title>
-<meta name=description content=" Install AD CS roles  Install-WindowsFeature -Name ADCS-Cert-Authority,ADCS-Web-Enrollment -IncludeManagementTools   Configure enterprise subordinate certificate authority  https://christopherkibble.com/posts/standing-up-a-microsoft-certificate-authority-part-2/    ">
+<meta name=description content=" Install AD CS roles  Install-WindowsFeature -Name ADCS-Cert-Authority,ADCS-Web-Enrollment -IncludeManagementTools   Create PKI A record  Add-DnsServerResourceRecordA -Name pki -IPv4Address 172.20.1.101 -ZoneName lab.dev.ajf8729.com   Configure enterprise subordinate certificate authority  https://christopherkibble.com/posts/standing-up-a-microsoft-certificate-authority-part-2/   Configure CDP  http://pki.lab.dev.ajf8729.com/CertEnroll/.crl Include in CRL Include in CDP extension   Configure AIA  http://pki.lab.dev.ajf8729.com/CertEnroll/_.crt Include in AIA extension    ">
 <meta name=author content>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/an-old-hope.min.css>
@@ -19,19 +19,19 @@
 <link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
 <meta name=generator content="Hugo 0.89.0">
 <meta property="og:title" content="Part VIII: Active Directory Certificate Services">
-<meta property="og:description" content=" Install AD CS roles  Install-WindowsFeature -Name ADCS-Cert-Authority,ADCS-Web-Enrollment -IncludeManagementTools   Configure enterprise subordinate certificate authority  https://christopherkibble.com/posts/standing-up-a-microsoft-certificate-authority-part-2/    ">
+<meta property="og:description" content=" Install AD CS roles  Install-WindowsFeature -Name ADCS-Cert-Authority,ADCS-Web-Enrollment -IncludeManagementTools   Create PKI A record  Add-DnsServerResourceRecordA -Name pki -IPv4Address 172.20.1.101 -ZoneName lab.dev.ajf8729.com   Configure enterprise subordinate certificate authority  https://christopherkibble.com/posts/standing-up-a-microsoft-certificate-authority-part-2/   Configure CDP  http://pki.lab.dev.ajf8729.com/CertEnroll/.crl Include in CRL Include in CDP extension   Configure AIA  http://pki.lab.dev.ajf8729.com/CertEnroll/_.crt Include in AIA extension    ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ajf8729.com/guide/part-viii-adcs/"><meta property="article:section" content="guide">
 <meta property="article:published_time" content="2021-09-01T15:00:00-04:00">
 <meta property="article:modified_time" content="2021-09-01T15:00:00-04:00">
 <meta itemprop=name content="Part VIII: Active Directory Certificate Services">
-<meta itemprop=description content=" Install AD CS roles  Install-WindowsFeature -Name ADCS-Cert-Authority,ADCS-Web-Enrollment -IncludeManagementTools   Configure enterprise subordinate certificate authority  https://christopherkibble.com/posts/standing-up-a-microsoft-certificate-authority-part-2/    "><meta itemprop=datePublished content="2021-09-01T15:00:00-04:00">
+<meta itemprop=description content=" Install AD CS roles  Install-WindowsFeature -Name ADCS-Cert-Authority,ADCS-Web-Enrollment -IncludeManagementTools   Create PKI A record  Add-DnsServerResourceRecordA -Name pki -IPv4Address 172.20.1.101 -ZoneName lab.dev.ajf8729.com   Configure enterprise subordinate certificate authority  https://christopherkibble.com/posts/standing-up-a-microsoft-certificate-authority-part-2/   Configure CDP  http://pki.lab.dev.ajf8729.com/CertEnroll/.crl Include in CRL Include in CDP extension   Configure AIA  http://pki.lab.dev.ajf8729.com/CertEnroll/_.crt Include in AIA extension    "><meta itemprop=datePublished content="2021-09-01T15:00:00-04:00">
 <meta itemprop=dateModified content="2021-09-01T15:00:00-04:00">
-<meta itemprop=wordCount content="14">
+<meta itemprop=wordCount content="42">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Part VIII: Active Directory Certificate Services">
-<meta name=twitter:description content=" Install AD CS roles  Install-WindowsFeature -Name ADCS-Cert-Authority,ADCS-Web-Enrollment -IncludeManagementTools   Configure enterprise subordinate certificate authority  https://christopherkibble.com/posts/standing-up-a-microsoft-certificate-authority-part-2/    ">
+<meta name=twitter:description content=" Install AD CS roles  Install-WindowsFeature -Name ADCS-Cert-Authority,ADCS-Web-Enrollment -IncludeManagementTools   Create PKI A record  Add-DnsServerResourceRecordA -Name pki -IPv4Address 172.20.1.101 -ZoneName lab.dev.ajf8729.com   Configure enterprise subordinate certificate authority  https://christopherkibble.com/posts/standing-up-a-microsoft-certificate-authority-part-2/   Configure CDP  http://pki.lab.dev.ajf8729.com/CertEnroll/.crl Include in CRL Include in CDP extension   Configure AIA  http://pki.lab.dev.ajf8729.com/CertEnroll/_.crt Include in AIA extension    ">
 </head>
 <body class=not-ready data-menu=true>
 <header class=header>
@@ -65,9 +65,27 @@
 <li><code>Install-WindowsFeature -Name ADCS-Cert-Authority,ADCS-Web-Enrollment -IncludeManagementTools</code></li>
 </ul>
 </li>
+<li>Create PKI A record
+<ul>
+<li><code>Add-DnsServerResourceRecordA -Name pki -IPv4Address 172.20.1.101 -ZoneName lab.dev.ajf8729.com</code></li>
+</ul>
+</li>
 <li>Configure enterprise subordinate certificate authority
 <ul>
 <li><a href=https://christopherkibble.com/posts/standing-up-a-microsoft-certificate-authority-part-2/>https://christopherkibble.com/posts/standing-up-a-microsoft-certificate-authority-part-2/</a></li>
+</ul>
+</li>
+<li>Configure CDP
+<ul>
+<li><a href=http://pki.lab.dev.ajf8729.com/CertEnroll/>http://pki.lab.dev.ajf8729.com/CertEnroll/</a>.crl</li>
+<li>Include in CRL</li>
+<li>Include in CDP extension</li>
+</ul>
+</li>
+<li>Configure AIA
+<ul>
+<li><a href=http://pki.lab.dev.ajf8729.com/CertEnroll/>http://pki.lab.dev.ajf8729.com/CertEnroll/</a>_.crt</li>
+<li>Include in AIA extension</li>
 </ul>
 </li>
 </ol>
