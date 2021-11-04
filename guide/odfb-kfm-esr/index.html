@@ -7,7 +7,7 @@
 <meta name=twitter:title content="OneDrive for Business, Known Folder Move, and Enterprise State Roaming">
 <meta name=twitter:image content="https://ajf8729.com/icon.png">
 <title>OneDrive for Business, Known Folder Move, and Enterprise State Roaming - AJF8729</title>
-<meta name=description content=" Configure OneDrive for Business (ODfB)  https://docs.microsoft.com/en-us/onedrive/use-group-policy   Configure Known Folder Move (KFM)  https://docs.microsoft.com/en-us/onedrive/redirect-known-folders   Configure Enterprise State Roaming (ESR)  https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-enable    ">
+<meta name=description content="Configure OneDrive for Business (ODfB) and Known Folder Move (KFM)  https://docs.microsoft.com/en-us/onedrive/use-group-policy https://docs.microsoft.com/en-us/onedrive/redirect-known-folders Copy ADMX from %localappdata%\Microsoft\OneDrive\BuildNumber\adm\ to central store Create GPO Workstation - OneDrive for Business and link to Workstations OU  &ldquo;Allow syncing OneDrive accounts for only specific organizations&rdquo; -> Specify tenant ID &ldquo;Prevent users from redirecting their Windows known folders to their PC&rdquo; - Enabled &ldquo;Silently move Windows known folders to OneDrive&rdquo; -> Enabled, specify tenant ID, show notification, select all folders &ldquo;Silently sign in users to the OneDrive sync app with their Windows credentials&rdquo; -> Enabled &ldquo;Specify the OneDrive location in a hybrid environment&rdquo; -> Enabled, set to SharePoint Online     Configure Enterprise State Roaming (ESR)  https://docs.">
 <meta name=author content>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/an-old-hope.min.css>
@@ -19,16 +19,16 @@
 <link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
 <meta name=generator content="Hugo 0.89.0">
 <meta property="og:title" content="OneDrive for Business, Known Folder Move, and Enterprise State Roaming">
-<meta property="og:description" content=" Configure OneDrive for Business (ODfB)  https://docs.microsoft.com/en-us/onedrive/use-group-policy   Configure Known Folder Move (KFM)  https://docs.microsoft.com/en-us/onedrive/redirect-known-folders   Configure Enterprise State Roaming (ESR)  https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-enable    ">
+<meta property="og:description" content="Configure OneDrive for Business (ODfB) and Known Folder Move (KFM)  https://docs.microsoft.com/en-us/onedrive/use-group-policy https://docs.microsoft.com/en-us/onedrive/redirect-known-folders Copy ADMX from %localappdata%\Microsoft\OneDrive\BuildNumber\adm\ to central store Create GPO Workstation - OneDrive for Business and link to Workstations OU  &ldquo;Allow syncing OneDrive accounts for only specific organizations&rdquo; -> Specify tenant ID &ldquo;Prevent users from redirecting their Windows known folders to their PC&rdquo; - Enabled &ldquo;Silently move Windows known folders to OneDrive&rdquo; -> Enabled, specify tenant ID, show notification, select all folders &ldquo;Silently sign in users to the OneDrive sync app with their Windows credentials&rdquo; -> Enabled &ldquo;Specify the OneDrive location in a hybrid environment&rdquo; -> Enabled, set to SharePoint Online     Configure Enterprise State Roaming (ESR)  https://docs.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ajf8729.com/guide/odfb-kfm-esr/"><meta property="article:section" content="guide">
 <meta itemprop=name content="OneDrive for Business, Known Folder Move, and Enterprise State Roaming">
-<meta itemprop=description content=" Configure OneDrive for Business (ODfB)  https://docs.microsoft.com/en-us/onedrive/use-group-policy   Configure Known Folder Move (KFM)  https://docs.microsoft.com/en-us/onedrive/redirect-known-folders   Configure Enterprise State Roaming (ESR)  https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-enable    ">
-<meta itemprop=wordCount content="18">
+<meta itemprop=description content="Configure OneDrive for Business (ODfB) and Known Folder Move (KFM)  https://docs.microsoft.com/en-us/onedrive/use-group-policy https://docs.microsoft.com/en-us/onedrive/redirect-known-folders Copy ADMX from %localappdata%\Microsoft\OneDrive\BuildNumber\adm\ to central store Create GPO Workstation - OneDrive for Business and link to Workstations OU  &ldquo;Allow syncing OneDrive accounts for only specific organizations&rdquo; -> Specify tenant ID &ldquo;Prevent users from redirecting their Windows known folders to their PC&rdquo; - Enabled &ldquo;Silently move Windows known folders to OneDrive&rdquo; -> Enabled, specify tenant ID, show notification, select all folders &ldquo;Silently sign in users to the OneDrive sync app with their Windows credentials&rdquo; -> Enabled &ldquo;Specify the OneDrive location in a hybrid environment&rdquo; -> Enabled, set to SharePoint Online     Configure Enterprise State Roaming (ESR)  https://docs.">
+<meta itemprop=wordCount content="108">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="OneDrive for Business, Known Folder Move, and Enterprise State Roaming">
-<meta name=twitter:description content=" Configure OneDrive for Business (ODfB)  https://docs.microsoft.com/en-us/onedrive/use-group-policy   Configure Known Folder Move (KFM)  https://docs.microsoft.com/en-us/onedrive/redirect-known-folders   Configure Enterprise State Roaming (ESR)  https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-enable    ">
+<meta name=twitter:description content="Configure OneDrive for Business (ODfB) and Known Folder Move (KFM)  https://docs.microsoft.com/en-us/onedrive/use-group-policy https://docs.microsoft.com/en-us/onedrive/redirect-known-folders Copy ADMX from %localappdata%\Microsoft\OneDrive\BuildNumber\adm\ to central store Create GPO Workstation - OneDrive for Business and link to Workstations OU  &ldquo;Allow syncing OneDrive accounts for only specific organizations&rdquo; -> Specify tenant ID &ldquo;Prevent users from redirecting their Windows known folders to their PC&rdquo; - Enabled &ldquo;Silently move Windows known folders to OneDrive&rdquo; -> Enabled, specify tenant ID, show notification, select all folders &ldquo;Silently sign in users to the OneDrive sync app with their Windows credentials&rdquo; -> Enabled &ldquo;Specify the OneDrive location in a hybrid environment&rdquo; -> Enabled, set to SharePoint Online     Configure Enterprise State Roaming (ESR)  https://docs.">
 </head>
 <body class=not-ready data-menu=true>
 <header class=header>
@@ -57,14 +57,20 @@
 <h1>OneDrive for Business, Known Folder Move, and Enterprise State Roaming</h1>
 </header>
 <section class=post-content><ol>
-<li>Configure OneDrive for Business (ODfB)
+<li>Configure OneDrive for Business (ODfB) and Known Folder Move (KFM)
 <ul>
 <li><a href=https://docs.microsoft.com/en-us/onedrive/use-group-policy>https://docs.microsoft.com/en-us/onedrive/use-group-policy</a></li>
+<li><a href=https://docs.microsoft.com/en-us/onedrive/redirect-known-folders>https://docs.microsoft.com/en-us/onedrive/redirect-known-folders</a></li>
+<li>Copy ADMX from <code>%localappdata%\Microsoft\OneDrive\BuildNumber\adm\</code> to central store</li>
+<li>Create GPO <code>Workstation - OneDrive for Business</code> and link to <code>Workstations</code> OU
+<ul>
+<li>&ldquo;Allow syncing OneDrive accounts for only specific organizations&rdquo; -> Specify tenant ID</li>
+<li>&ldquo;Prevent users from redirecting their Windows known folders to their PC&rdquo; - Enabled</li>
+<li>&ldquo;Silently move Windows known folders to OneDrive&rdquo; -> Enabled, specify tenant ID, show notification, select all folders</li>
+<li>&ldquo;Silently sign in users to the OneDrive sync app with their Windows credentials&rdquo; -> Enabled</li>
+<li>&ldquo;Specify the OneDrive location in a hybrid environment&rdquo; -> Enabled, set to SharePoint Online</li>
 </ul>
 </li>
-<li>Configure Known Folder Move (KFM)
-<ul>
-<li><a href=https://docs.microsoft.com/en-us/onedrive/redirect-known-folders>https://docs.microsoft.com/en-us/onedrive/redirect-known-folders</a></li>
 </ul>
 </li>
 <li>Configure Enterprise State Roaming (ESR)
