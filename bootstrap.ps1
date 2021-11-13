@@ -30,6 +30,10 @@ winget install "Git" -h
 Write-Host "Installing VS Code..."
 winget install "Microsoft Visual Studio Code" -h
 
+# Configure Git
+git config --global user.email "ajf@anthonyfontanez.com"
+git config --global user.name "Anthony J. Fontanez"
+
 #Set GIT_SSH
 Write-Host "Setting GIT_SSH..."
 [System.Environment]::SetEnvironmentVariable('GIT_SSH', 'C:\Windows\System32\OpenSSH\ssh.exe', [System.EnvironmentVariableTarget]::Machine)
