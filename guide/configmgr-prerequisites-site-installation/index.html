@@ -7,7 +7,7 @@
 <meta name=twitter:title content="ConfigMgr - Prerequisites and Site Installation">
 <meta name=twitter:image content="https://ajf8729.com/icon.png">
 <title>ConfigMgr - Prerequisites and Site Installation - AJF8729</title>
-<meta name=description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
+<meta name=description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
 <meta name=author content>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/an-old-hope.min.css>
@@ -19,16 +19,16 @@
 <link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
 <meta name=generator content="Hugo 0.89.2">
 <meta property="og:title" content="ConfigMgr - Prerequisites and Site Installation">
-<meta property="og:description" content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
+<meta property="og:description" content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ajf8729.com/guide/configmgr-prerequisites-site-installation/"><meta property="article:section" content="guide">
 <meta itemprop=name content="ConfigMgr - Prerequisites and Site Installation">
-<meta itemprop=description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
-<meta itemprop=wordCount content="133">
+<meta itemprop=description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
+<meta itemprop=wordCount content="134">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="ConfigMgr - Prerequisites and Site Installation">
-<meta name=twitter:description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
+<meta name=twitter:description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
 </head>
 <body class=not-ready data-menu=true>
 <header class=header>
@@ -65,7 +65,8 @@
 </li>
 <li>Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles
 <ul>
-<li><a href=https://github.com/ajf8729/Lab/blob/main/WindowsFeatures.txt>https://github.com/ajf8729/Lab/blob/main/WindowsFeatures.txt</a></li>
+<li><a href=https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt>https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt</a></li>
+<li><a href=https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt>https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt</a></li>
 <li><code>Install-WindowsFeature -Name (Get-Content -Path "WindowsFeatures.txt")</code></li>
 </ul>
 </li>

@@ -24,7 +24,7 @@
 <meta property="og:url" content="https://ajf8729.com/guide/configmgr-sql-installation-configuration/"><meta property="article:section" content="guide">
 <meta itemprop=name content="ConfigMgr - SQL Installation and Configuration">
 <meta itemprop=description content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks  Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null   Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs.">
-<meta itemprop=wordCount content="170">
+<meta itemprop=wordCount content="171">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="ConfigMgr - SQL Installation and Configuration">
@@ -111,7 +111,8 @@
 </li>
 <li>SQL Server 2019 installation configuration file
 <ul>
-<li><a href=https://github.com/ajf8729/Lab/blob/main/SQLConfig.ini>https://github.com/ajf8729/Lab/blob/main/SQLConfig.ini</a></li>
+<li><a href=https://github.com/ajf8729/Lab/blob/main/conf/SQLConfig.ini>https://github.com/ajf8729/Lab/blob/main/conf/SQLConfig.ini</a></li>
+<li><a href=https://raw.githubusercontent.com/ajf8729/Lab/main/conf/SQLConfig.ini>https://raw.githubusercontent.com/ajf8729/Lab/main/conf/SQLConfig.ini</a></li>
 </ul>
 </li>
 <li>SQL Server 2019 LCU (CU 13 as of 2021-11-01)
