@@ -24,7 +24,7 @@
 <meta property="og:url" content="https://ajf8729.com/guide/configmgr-prerequisites-site-installation/"><meta property="article:section" content="guide">
 <meta itemprop=name content="ConfigMgr - Prerequisites and Site Installation">
 <meta itemprop=description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
-<meta itemprop=wordCount content="134">
+<meta itemprop=wordCount content="136">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="ConfigMgr - Prerequisites and Site Installation">
@@ -100,6 +100,8 @@
 </li>
 <li>Install ConfigMgr primary site
 <ul>
+<li><a href=https://github.com/ajf8729/Lab/blob/main/conf/ConfigMgr.ini>https://github.com/ajf8729/Lab/blob/main/conf/ConfigMgr.ini</a></li>
+<li><a href=https://raw.githubusercontent.com/ajf8729/Lab/main/conf/ConfigMgr.ini>https://raw.githubusercontent.com/ajf8729/Lab/main/conf/ConfigMgr.ini</a></li>
 <li><code>setup.exe /script ConfigMgr.ini</code></li>
 </ul>
 </li>
