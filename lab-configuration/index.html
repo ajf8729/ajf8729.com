@@ -7,11 +7,16 @@
 <meta name=twitter:title content="Lab Configuration">
 <meta name=twitter:image content="https://ajf8729.com/icon.png">
 <title>Lab Configuration - AJF8729</title>
-<meta name=description content="AJF8729-ROOT-CA (offline)
- Offline Root Certificate Authority - AJF8729 ROOT CA 2021    ADCM01.ad.ajf8729.com (172.20.1.16)
- ConfigMgr Primary Site Server - AD0    ADDC03A.ad.ajf8729.com (172.20.1.19)
- Active Directory Domain Controller Azure AD Connect DFS Namespace Server DHCP Server DNS Server Enterprise Subordinate Certificate Authority - AJF8729 SIGNING CA 2021 Intune Certificate Connector Intune Connector for Active Directory    ADCM02.ad.ajf8729.com (172.20.1.28)
- ConfigMgr Site System Server    HAL-9000 (172.">
+<meta name=description content="  AJF8729-ROOT-CA (offline)
+ Offline Root Certificate Authority - AJF8729 ROOT CA    ED-209 (172.30.1.1)
+ Hyper-V    CORPDC01A (172.30.1.2)
+  CORPDC01B (172.30.1.3)
+  DHCP01A (172.30.1.4)
+  FS01 (172.30.1.5)
+  CM01 (172.30.1.6)
+  AADC01A (172.30.1.7)
+  CORPCA01 (172.30.1.8)
+  ">
 <meta name=author content>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/an-old-hope.min.css>
@@ -21,33 +26,48 @@
 <link rel=preload as=image href=https://ajf8729.com/github.svg>
 <link rel=icon href=https://ajf8729.com/favicon.ico>
 <link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
-<meta name=generator content="Hugo 0.89.2">
+<meta name=generator content="Hugo 0.89.4">
 <meta property="og:title" content="Lab Configuration">
-<meta property="og:description" content="AJF8729-ROOT-CA (offline)
- Offline Root Certificate Authority - AJF8729 ROOT CA 2021    ADCM01.ad.ajf8729.com (172.20.1.16)
- ConfigMgr Primary Site Server - AD0    ADDC03A.ad.ajf8729.com (172.20.1.19)
- Active Directory Domain Controller Azure AD Connect DFS Namespace Server DHCP Server DNS Server Enterprise Subordinate Certificate Authority - AJF8729 SIGNING CA 2021 Intune Certificate Connector Intune Connector for Active Directory    ADCM02.ad.ajf8729.com (172.20.1.28)
- ConfigMgr Site System Server    HAL-9000 (172.">
+<meta property="og:description" content="  AJF8729-ROOT-CA (offline)
+ Offline Root Certificate Authority - AJF8729 ROOT CA    ED-209 (172.30.1.1)
+ Hyper-V    CORPDC01A (172.30.1.2)
+  CORPDC01B (172.30.1.3)
+  DHCP01A (172.30.1.4)
+  FS01 (172.30.1.5)
+  CM01 (172.30.1.6)
+  AADC01A (172.30.1.7)
+  CORPCA01 (172.30.1.8)
+  ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ajf8729.com/lab-configuration/"><meta property="article:section" content>
 <meta property="article:published_time" content="2021-08-20T13:00:00-04:00">
 <meta property="article:modified_time" content="2021-08-20T13:00:00-04:00">
 <meta itemprop=name content="Lab Configuration">
-<meta itemprop=description content="AJF8729-ROOT-CA (offline)
- Offline Root Certificate Authority - AJF8729 ROOT CA 2021    ADCM01.ad.ajf8729.com (172.20.1.16)
- ConfigMgr Primary Site Server - AD0    ADDC03A.ad.ajf8729.com (172.20.1.19)
- Active Directory Domain Controller Azure AD Connect DFS Namespace Server DHCP Server DNS Server Enterprise Subordinate Certificate Authority - AJF8729 SIGNING CA 2021 Intune Certificate Connector Intune Connector for Active Directory    ADCM02.ad.ajf8729.com (172.20.1.28)
- ConfigMgr Site System Server    HAL-9000 (172."><meta itemprop=datePublished content="2021-08-20T13:00:00-04:00">
+<meta itemprop=description content="  AJF8729-ROOT-CA (offline)
+ Offline Root Certificate Authority - AJF8729 ROOT CA    ED-209 (172.30.1.1)
+ Hyper-V    CORPDC01A (172.30.1.2)
+  CORPDC01B (172.30.1.3)
+  DHCP01A (172.30.1.4)
+  FS01 (172.30.1.5)
+  CM01 (172.30.1.6)
+  AADC01A (172.30.1.7)
+  CORPCA01 (172.30.1.8)
+  "><meta itemprop=datePublished content="2021-08-20T13:00:00-04:00">
 <meta itemprop=dateModified content="2021-08-20T13:00:00-04:00">
-<meta itemprop=wordCount content="82">
+<meta itemprop=wordCount content="27">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Lab Configuration">
-<meta name=twitter:description content="AJF8729-ROOT-CA (offline)
- Offline Root Certificate Authority - AJF8729 ROOT CA 2021    ADCM01.ad.ajf8729.com (172.20.1.16)
- ConfigMgr Primary Site Server - AD0    ADDC03A.ad.ajf8729.com (172.20.1.19)
- Active Directory Domain Controller Azure AD Connect DFS Namespace Server DHCP Server DNS Server Enterprise Subordinate Certificate Authority - AJF8729 SIGNING CA 2021 Intune Certificate Connector Intune Connector for Active Directory    ADCM02.ad.ajf8729.com (172.20.1.28)
- ConfigMgr Site System Server    HAL-9000 (172.">
+<meta name=twitter:description content="  AJF8729-ROOT-CA (offline)
+ Offline Root Certificate Authority - AJF8729 ROOT CA    ED-209 (172.30.1.1)
+ Hyper-V    CORPDC01A (172.30.1.2)
+  CORPDC01B (172.30.1.3)
+  DHCP01A (172.30.1.4)
+  FS01 (172.30.1.5)
+  CM01 (172.30.1.6)
+  AADC01A (172.30.1.7)
+  CORPCA01 (172.30.1.8)
+  ">
 </head>
 <body class=not-ready data-menu=true>
 <header class=header>
@@ -79,58 +99,35 @@
 <li>
 <p><code>AJF8729-ROOT-CA</code> (offline)</p>
 <ul>
-<li>Offline Root Certificate Authority - <code>AJF8729 ROOT CA 2021</code></li>
+<li>Offline Root Certificate Authority - <code>AJF8729 ROOT CA</code></li>
 </ul>
 </li>
 <li>
-<p><code>ADCM01.ad.ajf8729.com</code> (172.20.1.16)</p>
+<p><code>ED-209</code> (172.30.1.1)</p>
 <ul>
-<li>ConfigMgr Primary Site Server - <code>AD0</code></li>
+<li>Hyper-V</li>
 </ul>
 </li>
 <li>
-<p><code>ADDC03A.ad.ajf8729.com</code> (172.20.1.19)</p>
-<ul>
-<li>Active Directory Domain Controller</li>
-<li>Azure AD Connect</li>
-<li>DFS Namespace Server</li>
-<li>DHCP Server</li>
-<li>DNS Server</li>
-<li>Enterprise Subordinate Certificate Authority - <code>AJF8729 SIGNING CA 2021</code></li>
-<li>Intune Certificate Connector</li>
-<li>Intune Connector for Active Directory</li>
-</ul>
+<p>CORPDC01A (172.30.1.2)</p>
 </li>
 <li>
-<p><code>ADCM02.ad.ajf8729.com</code> (172.20.1.28)</p>
-<ul>
-<li>ConfigMgr Site System Server</li>
-</ul>
+<p>CORPDC01B (172.30.1.3)</p>
 </li>
 <li>
-<p><code>HAL-9000</code> (172.20.1.201)</p>
-<ul>
-<li>Hyper-V Host</li>
-</ul>
+<p>DHCP01A (172.30.1.4)</p>
 </li>
 <li>
-<p><code>LABDC01A.lab.dev.ajf8729.com</code> (172.20.1.101)</p>
-<ul>
-<li>Active Directory Domain Controller</li>
-<li>DNS Server</li>
-</ul>
+<p>FS01 (172.30.1.5)</p>
 </li>
 <li>
-<p><code>LABCM01.lab.dev.ajf8729.com</code> (172.20.1.102)</p>
-<ul>
-<li>ConfigMgr Primary Site Server - <code>LAB</code></li>
-</ul>
+<p>CM01 (172.30.1.6)</p>
 </li>
 <li>
-<p><code>SKYNET</code> (172.20.1.1)</p>
-<ul>
-<li>Hyper-V Host</li>
-</ul>
+<p>AADC01A (172.30.1.7)</p>
+</li>
+<li>
+<p>CORPCA01 (172.30.1.8)</p>
 </li>
 </ul>
 </section>
