@@ -15,7 +15,7 @@
 <link rel=preload as=image href=https://ajf8729.com/github.svg>
 <link rel=icon href=https://ajf8729.com/favicon.ico>
 <link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
-<meta name=generator content="Hugo 0.89.4">
+<meta name=generator content="Hugo 0.90.1">
 <meta property="og:title" content="ConfigMgr - HTTPS Configuration">
 <meta property="og:description" content=" https://anthonyfontanez.com/index.php/2021/05/28/migrating-configmgr-to-https-only/ Configure &ldquo;AJF8729 LAB ConfigMgr DP Client&rdquo; certificate template Install Fallback Status Point  Add-CMFallbackStatusPoint -SiteSystemServerName labcm01.lab.dev.ajf8729.com   Configure IIS HTTPS bindings Enable certificate use when available Add root CA certificate to site Enable MP HTTPS  Set-CMManagementPoint -SiteSystemServerName &#34;labcm01.lab.dev.ajf8729.com&#34; -EnableSsl $true   Enable DP HTTPS  Set-CMDistributionPoint -SiteSystemServerName &#34;labcm01.lab.dev.ajf8729.com&#34; -ClientCommunicationType Https -CertificatePath &#34;C:\LAB\AJF8729 LAB ConfigMgr DP Client 2021.11.03.pfx&#34; -CertificatePassword (Read-Host -Prompt &#34;Enter PFX Password&#34; -AsSecureString)   Verify communication Set site to HTTPS-only  Set-CMSite -SiteCode LAB -ClientComputerCommunicationType HttpsOnly    ">
 <meta property="og:type" content="article">

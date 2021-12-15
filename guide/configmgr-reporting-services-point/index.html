@@ -15,7 +15,7 @@
 <link rel=preload as=image href=https://ajf8729.com/github.svg>
 <link rel=icon href=https://ajf8729.com/favicon.ico>
 <link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
-<meta name=generator content="Hugo 0.89.4">
+<meta name=generator content="Hugo 0.90.1">
 <meta property="og:title" content="ConfigMgr - Reporting Services Point">
 <meta property="og:description" content="Download SQL Server Reporting Services  https://docs.microsoft.com/sql/reporting-services/install-windows/install-reporting-services https://www.microsoft.com/download/details.aspx?id=100122 https://download.microsoft.com/download/1/a/a/1aaa9177-3578-4931-b8f3-373b24f63342/SQLServerReportingServices.exe   Prepare gMSA for SSRS  New-ADServiceAccount -Name svc_CM_SSRS -SamAccountName svc_CM_SSRS -DNSHostName adcm01.ad.ajf8729.com -KerberosEncryptionType AES128,AES256 -Path &#34;OU=CM,OU=Servers,OU=AJF8729,DC=ad,DC=ajf8729,DC=com&#34; -PrincipalsAllowedToRetrieveManagedPassword (Get-ADGroup -Identity CM_Servers) Install-ADServiceAccount -Identity svc_CM_SSRS Test-ADServiceAccount -Identity svc_CM_SSRS Restart-Computer Grant gMSA &ldquo;Log on as a service&rdquo; URA in ConfigMgr GPO   Install SSRS  SQLServerReportingServices.exe /passive /norestart /InstallFolder=&#34;E:\Program Files\Microsoft SQL Server Reporting Services&#34; /IAcceptLicenseTerms /Edition=Dev   Configure SSRS  Launch &ldquo;Report Server Configuration Manager&rdquo; Connect to the report server instance &ldquo;SSRS&rdquo; Configure the service account as AD\svc_CM_SSRS$ Configure the database, accepting all defaults Configure the Web Service URL Configure the Web Portal URL Verify URLs are accessible  https://adcm01.">
 <meta property="og:type" content="article">

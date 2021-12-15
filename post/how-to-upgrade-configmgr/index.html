@@ -16,7 +16,7 @@
 <link rel=preload as=image href=https://ajf8729.com/github.svg>
 <link rel=icon href=https://ajf8729.com/favicon.ico>
 <link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
-<meta name=generator content="Hugo 0.89.4">
+<meta name=generator content="Hugo 0.90.1">
 <meta property="og:title" content="How to Upgrade ConfigMgr">
 <meta property="og:description" content="The following will show you how to upgrade a ConfigMgr site to the latest available update.
 [CmdletBinding()] Param() if ( -not (Test-Path -Path &#34;$env:SMS_ADMIN_UI_PATH\..\ConfigurationManager.psd1&#34;) ) { Write-Error -Message &#34;ConfigurationManager module does not exist.&#34; exit } # Import the ConfigurationManager module Import-Module -FullyQualifiedName &#34;$env:SMS_ADMIN_UI_PATH\..\ConfigurationManager.psd1&#34; # Get the site code $SiteCode = (Get-CimInstance -Namespace ROOT/SMS -ClassName SMS_ProviderLocation).SiteCode # Change to the site psdrive Set-Location -Path &#34;$($SiteCode):&#34; # Find the latest update $LatestSiteUpdate = (Get-CMSiteUpdate -Fast | Sort-Object -Descending -Property LastUpdateTime | Select-Object -First 1).">
