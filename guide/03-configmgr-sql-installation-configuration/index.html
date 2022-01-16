@@ -1,0 +1,163 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="03 ConfigMgr - SQL Installation and Configuration">
+<meta name=twitter:image content="https://ajf8729.com/icon.png">
+<title>03 ConfigMgr - SQL Installation and Configuration - AJF8729</title>
+<meta name=description content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks  Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null   Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs.">
+<meta name=author content>
+<link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
+<link rel=preload as=image href=https://ajf8729.com/theme.png>
+<link rel=preload as=image href=https://ajf8729.com/twitter.svg>
+<link rel=preload as=image href=https://ajf8729.com/github.svg>
+<link rel=icon href=https://ajf8729.com/favicon.ico>
+<link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
+<meta name=generator content="Hugo 0.92.0">
+<meta property="og:title" content="03 ConfigMgr - SQL Installation and Configuration">
+<meta property="og:description" content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks  Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null   Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ajf8729.com/guide/03-configmgr-sql-installation-configuration/"><meta property="article:section" content="guide">
+<meta itemprop=name content="03 ConfigMgr - SQL Installation and Configuration">
+<meta itemprop=description content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks  Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null   Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs.">
+<meta itemprop=wordCount content="171">
+<meta itemprop=keywords content>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="03 ConfigMgr - SQL Installation and Configuration">
+<meta name=twitter:description content="Update DNS servers  Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @(&#34;172.20.1.51&#34;)   Domain join  Add-Computer -DomainName &#34;lab.ajf8729.com&#34; -Restart   Configure disks  Get-Disk | ?{$_.OperationalStatus -eq &#34;Offline&#34;} | Set-Disk -IsOffline $false Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter &#34;E&#34; -FriendlyName &#34;SQL&#34; | Out-Null New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter &#34;F&#34; -FriendlyName &#34;CM&#34; | Out-Null New-Item -Path &#34;F:\&#34; -Name &#34;SOURCE&#34; -ItemType Directory | Out-Null   Install RSAT tools  Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC   Install gMSA  Install-ADServiceAccount -Identity &#34;svc_CM_SQL&#34; Restart-Computer   Stage media  Windows ADK  https://docs.">
+</head>
+<body class=not-ready data-menu=true>
+<header class=header>
+<p class=logo>
+<a class=site-name href=https://ajf8729.com/>AJF8729</a><a class=btn-dark></a>
+</p>
+<script>let bodyClx=document.body.classList,btnDark=document.querySelector('.btn-dark'),sysDark=window.matchMedia('(prefers-color-scheme: dark)'),darkVal=localStorage.getItem('dark'),setDark=a=>{bodyClx[a?'add':'remove']('dark'),localStorage.setItem('dark',a?'yes':'no')};setDark(darkVal?darkVal==='yes':sysDark.matches),requestAnimationFrame(()=>bodyClx.remove('not-ready')),btnDark.addEventListener('click',()=>setDark(!bodyClx.contains('dark'))),sysDark.addEventListener('change',a=>setDark(a.matches))</script>
+<nav class=menu>
+<a href=/about/>About</a>
+<a href=/resume/>Resume</a>
+<a href=/post/>Posts</a>
+<a href=/guide/>Guides</a>
+<a href=/lab-configuration/>Lab Configuration</a>
+</nav>
+<nav class=social>
+<a class=twitter style=--url:url(./twitter.svg) href=https://twitter.com/ajf8729 target=_blank></a>
+<a class=github style=--url:url(./github.svg) href=https://github.com/ajf8729 target=_blank></a>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-title>
+<p>
+<time>Jan 1, 1</time>
+</p>
+<h1>03 ConfigMgr - SQL Installation and Configuration</h1>
+</header>
+<section class=post-content><ol>
+<li>Update DNS servers
+<ul>
+<li><code>Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses @("172.20.1.51")</code></li>
+</ul>
+</li>
+<li>Domain join
+<ul>
+<li><code>Add-Computer -DomainName "lab.ajf8729.com" -Restart</code></li>
+</ul>
+</li>
+<li>Configure disks
+<ul>
+<li><code>Get-Disk | ?{$_.OperationalStatus -eq "Offline"} | Set-Disk -IsOffline $false</code></li>
+<li><code>Get-Disk | ?{$_.IsReadOnly -eq $true} | Initialize-Disk -PartitionStyle GPT</code></li>
+<li><code>New-Volume -DiskNumber 1 -FileSystem NTFS -DriveLetter "E" -FriendlyName "SQL" | Out-Null</code></li>
+<li><code>New-Volume -DiskNumber 2 -FileSystem NTFS -DriveLetter "F" -FriendlyName "CM" | Out-Null</code></li>
+<li><code>New-Item -Path "F:\" -Name "SOURCE" -ItemType Directory | Out-Null</code></li>
+</ul>
+</li>
+<li>Install RSAT tools
+<ul>
+<li><code>Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,GPMC</code></li>
+</ul>
+</li>
+<li>Install gMSA
+<ul>
+<li><code>Install-ADServiceAccount -Identity "svc_CM_SQL"</code></li>
+<li><code>Restart-Computer</code></li>
+</ul>
+</li>
+<li>Stage media
+<ul>
+<li>Windows ADK
+<ul>
+<li><a href=https://docs.microsoft.com/windows-hardware/get-started/adk-install#download-the-adk-for-windows-11>https://docs.microsoft.com/windows-hardware/get-started/adk-install#download-the-adk-for-windows-11</a></li>
+<li><a href=https://download.microsoft.com/download/1/f/d/1fd2291e-c0e9-4ae0-beae-fbbe0fe41a5a/adk/adksetup.exe>https://download.microsoft.com/download/1/f/d/1fd2291e-c0e9-4ae0-beae-fbbe0fe41a5a/adk/adksetup.exe</a></li>
+<li><a href=https://download.microsoft.com/download/5/5/e/55e3e34a-5708-46cd-a90d-92044c29336b/adkwinpeaddons/adkwinpesetup.exe>https://download.microsoft.com/download/5/5/e/55e3e34a-5708-46cd-a90d-92044c29336b/adkwinpeaddons/adkwinpesetup.exe</a></li>
+<li><code>adksetup.exe /layout F:\SOURCE\ADK\ADK</code></li>
+<li><code>adkwinpesetup.exe /layout F:\SOURCE\ADK\WinPE</code></li>
+</ul>
+</li>
+<li>ConfigMgr Technical Preview (2110 as of 2021-11-01)
+<ul>
+<li><a href=https://www.microsoft.com/evalcenter/evaluate-microsoft-endpoint-configuration-manager-technical-preview/>https://www.microsoft.com/evalcenter/evaluate-microsoft-endpoint-configuration-manager-technical-preview/</a></li>
+<li><a href=https://download.microsoft.com/download/D/8/E/D8E795CE-44D7-40B7-9067-D3D1313865E5/Configmgr_TechPreview2110.exe>https://download.microsoft.com/download/D/8/E/D8E795CE-44D7-40B7-9067-D3D1313865E5/Configmgr_TechPreview2110.exe</a></li>
+</ul>
+</li>
+<li>SQL Server 2019 Media
+<ul>
+<li><a href=https://www.microsoft.com/sql-server/sql-server-downloads>https://www.microsoft.com/sql-server/sql-server-downloads</a></li>
+</ul>
+</li>
+<li>SQL Server 2019 installation configuration file
+<ul>
+<li><a href=https://github.com/ajf8729/Lab/blob/main/conf/SQLConfig.ini>https://github.com/ajf8729/Lab/blob/main/conf/SQLConfig.ini</a></li>
+<li><a href=https://raw.githubusercontent.com/ajf8729/Lab/main/conf/SQLConfig.ini>https://raw.githubusercontent.com/ajf8729/Lab/main/conf/SQLConfig.ini</a></li>
+</ul>
+</li>
+<li>SQL Server 2019 LCU (CU 13 as of 2021-11-01)
+<ul>
+<li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=100809">https://www.microsoft.com/en-us/download/details.aspx?id=100809</a></li>
+<li><a href=https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB5005679-x64.exe>https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB5005679-x64.exe</a></li>
+</ul>
+</li>
+<li>SQL Server Management Studio (18.10 as of 2021-11-01)
+<ul>
+<li><a href=https://aka.ms/ssmsfullsetup>https://aka.ms/ssmsfullsetup</a></li>
+<li><a href=https://download.microsoft.com/download/a/2/e/a2ef0390-62b6-4189-af6d-1762e0aa90aa/SSMS-Setup-ENU.exe>https://download.microsoft.com/download/a/2/e/a2ef0390-62b6-4189-af6d-1762e0aa90aa/SSMS-Setup-ENU.exe</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Install SQL Server 2019
+<ul>
+<li><code>setup.exe /IAcceptSQLServerLicenseTerms /ConfigurationFile="F:\SOURCE\SQLConfig.ini"</code></li>
+</ul>
+</li>
+<li>Install SQL Server 2019 LCU
+<ul>
+<li><code>SQLServer2019-KB5004524-x64.exe /qs /IAcceptSQLServerLicenseTerms /Action=Patch /AllInstances</code></li>
+</ul>
+</li>
+<li>Install SQL Server Management Studio
+<ul>
+<li><code>SSMS-Setup-ENU.exe /install /passive</code></li>
+</ul>
+</li>
+<li>Restart LABCM01</li>
+<li>Set SQL maximum memory usage to 1 GB & restart service</li>
+</ol>
+</section>
+<nav class=post-nav>
+<a class=prev href=https://ajf8729.com/guide/02-adds-installation-configuration/><span>←</span><span>02 Active Directory Domain Services - Installation and Configuration</span></a>
+<a class=next href=https://ajf8729.com/guide/04-configmgr-prerequisites-site-installation/><span>04 ConfigMgr - Prerequisites and Site Installation</span><span>→</span></a>
+</nav>
+</article>
+</main>
+<footer class=footer>
+<p>&copy; 2022 <a href=https://ajf8729.com/>AJF8729</a></p>
+<p>Powered by <a href=https://gohugo.io/ rel=noopener target=_blank>Hugo️️</a>️</p>
+<p>
+<a href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>Paper 5.1</a>
+</p>
+</footer>
+</body>
+</html>
