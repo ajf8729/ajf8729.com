@@ -15,7 +15,7 @@
 <link rel=preload as=image href=https://ajf8729.com/github.svg>
 <link rel=icon href=https://ajf8729.com/favicon.ico>
 <link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
-<meta name=generator content="Hugo 0.92.0">
+<meta name=generator content="Hugo 0.92.1">
 <meta property="og:title" content="08 ConfigMgr - Data Warehouse Service Point">
 <meta property="og:description" content=" Create Reporting Services Point account  New-ADUser -Name svc_CM_DW -SamAccountName svc_CM_DW -CannotChangePassword $true -PasswordNeverExpires $true -Path &#34;OU=CM,OU=Servers,OU=AJF8729,DC=ad,DC=ajf8729,DC=com&#34; -AccountPassword (Read-Host -Prompt &#34;Enter password&#34; -AsSecureString) -KerberosEncryptionType AES128,AES256 -ChangePasswordAtLogon $false -DisplayName svc_CM_DW -Enabled $true -UserPrincipalName &#34;svc_CM_DW@ad.ajf8729.com&#34; -Description &#34;ConfigMgr Data Warehouse Service Point Account&#34;   Install Reporting Services Point  New-CMAccount -UserName &#34;AD\svc_CM_DW&#34; -Password (Read-Host -Prompt &#34;Enter password&#34; -AsSecureString) Add-CMDataWarehouseServicePoint -SiteSystemServerName adcm01.ad.ajf8729.com -DataWarehouseDatabaseServerName adcm01.ad.ajf8729.com -DataWarehouseDatabaseName CM_AD0_DW -DataWarehouseSqlPort 1433 -UserName &#34;AD\svc_CM_DW&#34;    ">
 <meta property="og:type" content="article">
