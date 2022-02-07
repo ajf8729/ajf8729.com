@@ -8,7 +8,9 @@
 <meta name=twitter:description content="VM Creation & Initial Configuration">
 <meta name=twitter:image content="https://ajf8729.com/icon.png">
 <title>Part 01: VM Creation & Initial Configuration - AJF8729</title>
-<meta name=description content=" Create VMs: https://github.com/ajf8729/Lab/blob/main/NewLabVM.ps1 Power on VMs and install OS Set Administrator password Configure VMs: https://github.com/ajf8729/Lab/blob/main/ConfigureLabVM.ps1  ">
+<meta name=description content="Create VMs
+ https://github.com/ajf8729/Lab/blob/main/NewLabVM.ps1    # Example syntax to create a VM using NewLabVM.ps1 $Parameters = @{ LabName = LAB01 VMHostname = LAB01DC01A MemoryStartupMB = 1024 MemoryMaximumMB = 2048 ProcessorCount = 2 VirtualSwitchName = INTERNAL DiskCount = 1 VHDPath = 'D:\Virtual Hard Disks\' VHDSizeGB = 100 ISOPath = 'D:\Software\20348.169.210806-2348.fe_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso' Verbose = $true } .\NewLabVM.ps1 @Parameters  Power on VMs and install OS
+  Set Administrator password">
 <meta name=author content>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
 <link rel=preload as=image href=https://ajf8729.com/theme.png>
@@ -26,7 +28,7 @@
 <meta itemprop=name content="Part 01: VM Creation & Initial Configuration">
 <meta itemprop=description content="VM Creation & Initial Configuration"><meta itemprop=datePublished content="2022-02-06T17:00:00+00:00">
 <meta itemprop=dateModified content="2022-02-06T17:00:00+00:00">
-<meta itemprop=wordCount content="15">
+<meta itemprop=wordCount content="130">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Part 01: VM Creation & Initial Configuration">
@@ -60,12 +62,65 @@
 <h1>Part 01: VM Creation & Initial Configuration</h1>
 </header>
 <section class=post-content><ol>
-<li>Create VMs: <a href=https://github.com/ajf8729/Lab/blob/main/NewLabVM.ps1>https://github.com/ajf8729/Lab/blob/main/NewLabVM.ps1</a></li>
-<li>Power on VMs and install OS</li>
-<li>Set Administrator password</li>
-<li>Configure VMs: <a href=https://github.com/ajf8729/Lab/blob/main/ConfigureLabVM.ps1>https://github.com/ajf8729/Lab/blob/main/ConfigureLabVM.ps1</a></li>
+<li>
+<p>Create VMs</p>
+<ul>
+<li><a href=https://github.com/ajf8729/Lab/blob/main/NewLabVM.ps1>https://github.com/ajf8729/Lab/blob/main/NewLabVM.ps1</a></li>
+</ul>
+</li>
 </ol>
-</section>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ps data-lang=ps><span style=color:#a6e22e>#</span> <span style=color:#a6e22e>Example</span> <span style=color:#a6e22e>syntax</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>create</span> <span style=color:#a6e22e>a</span> <span style=color:#a6e22e>VM</span> <span style=color:#a6e22e>using</span> <span style=color:#a6e22e>NewLabVM.ps1</span>
+
+<span style=color:#a6e22e>$Parameters</span> <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>@</span>{
+    <span style=color:#a6e22e>LabName</span>           <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>LAB01</span>
+    <span style=color:#a6e22e>VMHostname</span>        <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>LAB01DC01A</span>
+    <span style=color:#a6e22e>MemoryStartupMB</span>   <span style=color:#a6e22e>=</span> <span style=color:#ae81ff>1024</span>
+    <span style=color:#a6e22e>MemoryMaximumMB</span>   <span style=color:#a6e22e>=</span> <span style=color:#ae81ff>2048</span>
+    <span style=color:#a6e22e>ProcessorCount</span>    <span style=color:#a6e22e>=</span> <span style=color:#ae81ff>2</span>
+    <span style=color:#a6e22e>VirtualSwitchName</span> <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>INTERNAL</span>
+    <span style=color:#a6e22e>DiskCount</span>         <span style=color:#a6e22e>=</span> <span style=color:#ae81ff>1</span>
+    <span style=color:#a6e22e>VHDPath</span>           <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>&#39;D:\Virtual</span> <span style=color:#a6e22e>Hard</span> <span style=color:#a6e22e>Disks\&#39;</span>
+    <span style=color:#a6e22e>VHDSizeGB</span>         <span style=color:#a6e22e>=</span> <span style=color:#ae81ff>100</span>
+    <span style=color:#a6e22e>ISOPath</span>           <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>&#39;D:\Software\20348.169.210806-2348.fe_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso&#39;</span>
+    <span style=color:#a6e22e>Verbose</span>           <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>$true</span>
+}
+
+<span style=color:#a6e22e>.\NewLabVM.ps1</span> <span style=color:#a6e22e>@Parameters</span>
+</code></pre></div><ol start=2>
+<li>
+<p>Power on VMs and install OS</p>
+</li>
+<li>
+<p>Set Administrator password</p>
+<ul>
+<li>This password will be used for further automation</li>
+<li>I tend to use <code>New-Guid</code> to generate a &ldquo;random&rdquo; password</li>
+</ul>
+</li>
+<li>
+<p>Configure VMs</p>
+<ul>
+<li><a href=https://github.com/ajf8729/Lab/blob/main/ConfigureLabVM.ps1>https://github.com/ajf8729/Lab/blob/main/ConfigureLabVM.ps1</a></li>
+</ul>
+</li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ps data-lang=ps><span style=color:#a6e22e>#</span> <span style=color:#a6e22e>Example</span> <span style=color:#a6e22e>syntax</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>configure</span> <span style=color:#a6e22e>a</span> <span style=color:#a6e22e>VM</span> <span style=color:#a6e22e>using</span> <span style=color:#a6e22e>ConfigureLabVM.ps1</span>
+
+<span style=color:#a6e22e>$Parameters</span> <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>@</span>{
+    <span style=color:#a6e22e>LabName</span>        <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>LAB01</span>
+    <span style=color:#a6e22e>VMHostname</span>     <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>LAB01DC01A</span>
+    <span style=color:#a6e22e>Username</span>       <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>Administrator</span>
+    <span style=color:#a6e22e>Password</span>       <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>&#39;bf1456b8-a91f-4a41-92a8-8388ff07dd6d&#39;</span>
+    <span style=color:#a6e22e>IPAddress</span>      <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>192.168.1.11</span>
+    <span style=color:#a6e22e>PrefixLength</span>   <span style=color:#a6e22e>=</span> <span style=color:#ae81ff>24</span>
+    <span style=color:#a6e22e>DefaultGateway</span> <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>192.168.1.1</span>
+    <span style=color:#a6e22e>DNSServer</span>      <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>192.168.1.1</span>
+    <span style=color:#a6e22e>TimeZoneID</span>     <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>&#39;Eastern</span> <span style=color:#a6e22e>Standard</span> <span style=color:#a6e22e>Time&#39;</span>
+    <span style=color:#a6e22e>Verbose</span>        <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>$true</span>
+}
+
+<span style=color:#a6e22e>.\ConfigureLabVM.ps1</span> <span style=color:#a6e22e>@Parameters</span>
+</code></pre></div></section>
 <nav class=post-nav>
 <a class=next href=https://ajf8729.com/guide/02-adds-installation-configuration/><span>02 Active Directory Domain Services - Installation and Configuration</span><span>→</span></a>
 </nav>
