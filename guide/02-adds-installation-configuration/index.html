@@ -8,7 +8,7 @@
 <meta name=twitter:description content="Active Directory Domain Services - Installation and Configuration">
 <meta name=twitter:image content="https://ajf8729.com/icon.png">
 <title>Part 02: Active Directory Domain Services - Installation and Configuration - AJF8729</title>
-<meta name=description content=" Install Active Directory  https://github.com/ajf8729/Lab/blob/main/02-CreateAD.ps1   Configure Active Directory  https://github.com/ajf8729/Lab/blob/main/03-ConfigureAD.ps1   Import security baselines  https://github.com/ajf8729/Lab/blob/main/03a-SecurityBaselines.ps1   Configure GPOs  Server - ConfigMgr  User Rights Assignments  &ldquo;Lock pages in memory&rdquo;: LAB\svc_CM_SQL$ &ldquo;Log on as a service&rdquo;: LAB\svc_CM_SQL$   Windows Firewall -> New inbound rule  Custom All Programs Local TCP ports 1433, 4022 Source: ConfigMgr Server IP Destination: ConfigMgr Server IP Allow All profiles Name: &ldquo;ConfigMgr - SQL Traffic&rdquo;     Server - Default Security Policy -> New local group preference  Add LocalAdmin_Servers to Administrators Set group description to &ldquo;GPO-Enforced Group&rdquo; Enable &ldquo;Delete all member users&rdquo; and &ldquo;Delete all member groups&rdquo;   Workstation - Default Security Policy -> New local group preference  Add LocalAdmin_Workstations to Administrators Set group description to &ldquo;GPO-Enforced Group&rdquo; Enable &ldquo;Delete all member users&rdquo; and &ldquo;Delete all member groups&rdquo;      ">
+<meta name=description content="Install Active Directory Domain Services  https://github.com/ajf8729/Lab/blob/main/NewLabDomain.ps1    # Example syntax to install AD DS using NewLabDomain.ps1 # Run from host running Hyper-V $Parameters = @{ LabName = LAB01 VMHostname = LAB01DC01A Username = Administrator Password = 'bf1456b8-a91f-4a41-92a8-8388ff07dd6d' DomainName = lab01.domain.tld DomainNetBIOSName = LAB01 SafeModeAdministratorPassword = 'bf1456b8-a91f-4a41-92a8-8388ff07dd6d' Verbose = $true } .\NewLabDomain.ps1 @Parameters Configure Active Directory Domain Services  https://github.com/ajf8729/Lab/blob/main/ConfigureLabDomain.ps1    # Example syntax to install AD DS using ConfigureLabDomain.">
 <meta name=author content>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
 <link rel=preload as=image href=https://ajf8729.com/theme.png>
@@ -26,7 +26,7 @@
 <meta itemprop=name content="Part 02: Active Directory Domain Services - Installation and Configuration">
 <meta itemprop=description content="Active Directory Domain Services - Installation and Configuration"><meta itemprop=datePublished content="2022-02-06T17:00:00+00:00">
 <meta itemprop=dateModified content="2022-02-06T17:00:00+00:00">
-<meta itemprop=wordCount content="121">
+<meta itemprop=wordCount content="272">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Part 02: Active Directory Domain Services - Installation and Configuration">
@@ -60,24 +60,65 @@
 <h1>Part 02: Active Directory Domain Services - Installation and Configuration</h1>
 </header>
 <section class=post-content><ol>
-<li>Install Active Directory
+<li>Install Active Directory Domain Services
 <ul>
-<li><a href=https://github.com/ajf8729/Lab/blob/main/02-CreateAD.ps1>https://github.com/ajf8729/Lab/blob/main/02-CreateAD.ps1</a></li>
+<li><a href=https://github.com/ajf8729/Lab/blob/main/NewLabDomain.ps1>https://github.com/ajf8729/Lab/blob/main/NewLabDomain.ps1</a></li>
 </ul>
 </li>
-<li>Configure Active Directory
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ps data-lang=ps><span style=color:#a6e22e>#</span> <span style=color:#a6e22e>Example</span> <span style=color:#a6e22e>syntax</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>install</span> <span style=color:#a6e22e>AD</span> <span style=color:#a6e22e>DS</span> <span style=color:#a6e22e>using</span> <span style=color:#a6e22e>NewLabDomain.ps1</span>
+<span style=color:#a6e22e>#</span> <span style=color:#a6e22e>Run</span> <span style=color:#a6e22e>from</span> <span style=color:#a6e22e>host</span> <span style=color:#a6e22e>running</span> <span style=color:#a6e22e>Hyper-V</span>
+
+<span style=color:#a6e22e>$Parameters</span> <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>@</span>{
+    <span style=color:#a6e22e>LabName</span>                       <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>LAB01</span>
+    <span style=color:#a6e22e>VMHostname</span>                    <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>LAB01DC01A</span>
+    <span style=color:#a6e22e>Username</span>                      <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>Administrator</span>
+    <span style=color:#a6e22e>Password</span>                      <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>&#39;bf1456b8-a91f-4a41-92a8-8388ff07dd6d&#39;</span>
+    <span style=color:#a6e22e>DomainName</span>                    <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>lab01.domain.tld</span>
+    <span style=color:#a6e22e>DomainNetBIOSName</span>             <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>LAB01</span>
+    <span style=color:#a6e22e>SafeModeAdministratorPassword</span> <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>&#39;bf1456b8-a91f-4a41-92a8-8388ff07dd6d&#39;</span>
+    <span style=color:#a6e22e>Verbose</span>                       <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>$true</span>
+}
+
+<span style=color:#a6e22e>.\NewLabDomain.ps1</span> <span style=color:#a6e22e>@Parameters</span>
+</code></pre></div><ol start=2>
+<li>Configure Active Directory Domain Services
 <ul>
-<li><a href=https://github.com/ajf8729/Lab/blob/main/03-ConfigureAD.ps1>https://github.com/ajf8729/Lab/blob/main/03-ConfigureAD.ps1</a></li>
+<li><a href=https://github.com/ajf8729/Lab/blob/main/ConfigureLabDomain.ps1>https://github.com/ajf8729/Lab/blob/main/ConfigureLabDomain.ps1</a></li>
 </ul>
 </li>
-<li>Import security baselines
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ps data-lang=ps><span style=color:#a6e22e>#</span> <span style=color:#a6e22e>Example</span> <span style=color:#a6e22e>syntax</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>install</span> <span style=color:#a6e22e>AD</span> <span style=color:#a6e22e>DS</span> <span style=color:#a6e22e>using</span> <span style=color:#a6e22e>ConfigureLabDomain.ps1</span>
+<span style=color:#a6e22e>#</span> <span style=color:#a6e22e>Run</span> <span style=color:#a6e22e>from</span> <span style=color:#a6e22e>within</span> <span style=color:#a6e22e>your</span> <span style=color:#a6e22e>domain</span> <span style=color:#a6e22e>controller</span> <span style=color:#a6e22e>VM</span>
+<span style=color:#a6e22e>#</span> <span style=color:#a6e22e>This</span> <span style=color:#a6e22e>script</span> <span style=color:#a6e22e>will</span> <span style=color:#a6e22e>prompt</span> <span style=color:#a6e22e>for</span> <span style=color:#ae81ff>4</span> <span style=color:#a6e22e>account</span> <span style=color:#a6e22e>passwords;</span> <span style=color:#a6e22e>domain</span> <span style=color:#a6e22e>admin,</span> <span style=color:#a6e22e>server</span> <span style=color:#a6e22e>admin,</span> <span style=color:#a6e22e>workstation</span> <span style=color:#a6e22e>admin,</span> <span style=color:#a6e22e>and</span> <span style=color:#a6e22e>normal</span> <span style=color:#a6e22e>account</span>
+
+<span style=color:#a6e22e>$Parameters</span> <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>@</span>{
+    <span style=color:#a6e22e>ReverseZoneNetworkId</span> <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>192.168.1.0</span>/24
+    <span style=color:#a6e22e>BaseUsername</span>         <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>jxs</span>
+    <span style=color:#a6e22e>GivenName</span>            <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>John</span>
+    <span style=color:#a6e22e>Initial</span>              <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>X</span>
+    <span style=color:#a6e22e>Surname</span>              <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>Smith</span>
+    <span style=color:#a6e22e>Verbose</span>              <span style=color:#a6e22e>=</span> <span style=color:#a6e22e>$true</span>
+}
+
+<span style=color:#a6e22e>.\ConfigureLabDomain.ps1</span> <span style=color:#a6e22e>@Parameters</span>
+</code></pre></div><ol start=3>
+<li>Configure security baselines
 <ul>
-<li><a href=https://github.com/ajf8729/Lab/blob/main/03a-SecurityBaselines.ps1>https://github.com/ajf8729/Lab/blob/main/03a-SecurityBaselines.ps1</a></li>
+<li><a href=https://github.com/ajf8729/Lab/blob/main/ConfigureSecurityBaselines.ps1>https://github.com/ajf8729/Lab/blob/main/ConfigureSecurityBaselines.ps1</a></li>
 </ul>
 </li>
-<li>Configure GPOs
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ps data-lang=ps><span style=color:#a6e22e>#</span> <span style=color:#a6e22e>Example</span> <span style=color:#a6e22e>syntax</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>configure</span> <span style=color:#a6e22e>security</span> <span style=color:#a6e22e>baselines</span> <span style=color:#a6e22e>using</span> <span style=color:#a6e22e>ConfigureSecurityBaselines.ps1</span>
+<span style=color:#a6e22e>#</span> <span style=color:#a6e22e>Run</span> <span style=color:#a6e22e>from</span> <span style=color:#a6e22e>within</span> <span style=color:#a6e22e>your</span> <span style=color:#a6e22e>domain</span> <span style=color:#a6e22e>controller</span> <span style=color:#a6e22e>VM</span>
+<span style=color:#a6e22e>#</span> <span style=color:#a6e22e>This</span> <span style=color:#a6e22e>script</span> <span style=color:#a6e22e>requires</span> <span style=color:#a6e22e>no</span> <span style=color:#a6e22e>input;</span> <span style=color:#a6e22e>it</span> <span style=color:#a6e22e>will</span> <span style=color:#a6e22e>automatically</span> <span style=color:#a6e22e>download,</span> <span style=color:#a6e22e>extract,</span> <span style=color:#a6e22e>import,</span> <span style=color:#a6e22e>and</span> <span style=color:#a6e22e>link</span> <span style=color:#a6e22e>various</span> <span style=color:#a6e22e>security</span> <span style=color:#a6e22e>baseline</span> <span style=color:#a6e22e>GPOs</span>
+
+<span style=color:#a6e22e>.\ConfigureSecurityBaselines.ps1</span>
+</code></pre></div><ol start=4>
+<li>Manually Configure GPOs:</li>
+</ol>
 <ul>
-<li><code>Server - ConfigMgr</code>
+<li>GPO: <code>Server - ConfigMgr</code>
 <ul>
 <li>User Rights Assignments
 <ul>
@@ -85,13 +126,14 @@
 <li>&ldquo;Log on as a service&rdquo;: <code>LAB\svc_CM_SQL$</code></li>
 </ul>
 </li>
-<li>Windows Firewall -> New inbound rule
+<li>Windows Firewall
 <ul>
-<li>Custom</li>
+<li>New Custom Inbound Rule
+<ul>
 <li>All Programs</li>
-<li>Local TCP ports 1433, 4022</li>
-<li>Source: ConfigMgr Server IP</li>
-<li>Destination: ConfigMgr Server IP</li>
+<li>Local TCP ports: 1433, 4022</li>
+<li>Source: ConfigMgr Server IP Address</li>
+<li>Destination: ConfigMgr Server IP Address</li>
 <li>Allow</li>
 <li>All profiles</li>
 <li>Name: &ldquo;ConfigMgr - SQL Traffic&rdquo;</li>
@@ -99,23 +141,31 @@
 </li>
 </ul>
 </li>
-<li><code>Server - Default Security Policy</code> -> New local group preference
+</ul>
+</li>
+<li>GPO: <code>Server - Default Security Policy</code>
 <ul>
-<li>Add LocalAdmin_Servers to Administrators</li>
+<li>New Local Group Preference
+<ul>
+<li>Add AD group <code>LocalAdmin_Servers</code> to <code>Administrators</code></li>
 <li>Set group description to &ldquo;GPO-Enforced Group&rdquo;</li>
 <li>Enable &ldquo;Delete all member users&rdquo; and &ldquo;Delete all member groups&rdquo;</li>
 </ul>
 </li>
-<li><code>Workstation - Default Security Policy</code> -> New local group preference
+</ul>
+</li>
+<li>GPO: <code>Workstation - Default Security Policy</code>
 <ul>
-<li>Add LocalAdmin_Workstations to Administrators</li>
+<li>New Local Group Preference
+<ul>
+<li>Add AD group <code>LocalAdmin_Workstations</code> to <code>Administrators</code></li>
 <li>Set group description to &ldquo;GPO-Enforced Group&rdquo;</li>
 <li>Enable &ldquo;Delete all member users&rdquo; and &ldquo;Delete all member groups&rdquo;</li>
 </ul>
 </li>
 </ul>
 </li>
-</ol>
+</ul>
 </section>
 <nav class=post-nav>
 <a class=prev href=https://ajf8729.com/guide/01-vm-creation/><span>←</span><span>Part 01: VM Creation & Initial Configuration</span></a>
