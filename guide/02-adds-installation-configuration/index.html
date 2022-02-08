@@ -21,12 +21,12 @@
 <meta property="og:description" content="Active Directory Domain Services - Installation and Configuration">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ajf8729.com/guide/02-adds-installation-configuration/"><meta property="article:section" content="guide">
-<meta property="article:published_time" content="2022-02-06T17:00:00+00:00">
-<meta property="article:modified_time" content="2022-02-06T17:00:00+00:00">
+<meta property="article:published_time" content="2022-02-07T17:00:00+00:00">
+<meta property="article:modified_time" content="2022-02-07T17:00:00+00:00">
 <meta itemprop=name content="Part 02: Active Directory Domain Services - Installation and Configuration">
-<meta itemprop=description content="Active Directory Domain Services - Installation and Configuration"><meta itemprop=datePublished content="2022-02-06T17:00:00+00:00">
-<meta itemprop=dateModified content="2022-02-06T17:00:00+00:00">
-<meta itemprop=wordCount content="272">
+<meta itemprop=description content="Active Directory Domain Services - Installation and Configuration"><meta itemprop=datePublished content="2022-02-07T17:00:00+00:00">
+<meta itemprop=dateModified content="2022-02-07T17:00:00+00:00">
+<meta itemprop=wordCount content="288">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Part 02: Active Directory Domain Services - Installation and Configuration">
@@ -55,7 +55,7 @@
 <article class=post-single>
 <header class=post-title>
 <p>
-<time>Feb 6, 2022</time>
+<time>Feb 7, 2022</time>
 </p>
 <h1>Part 02: Active Directory Domain Services - Installation and Configuration</h1>
 </header>
@@ -122,8 +122,8 @@
 <ul>
 <li>User Rights Assignments
 <ul>
-<li>&ldquo;Lock pages in memory&rdquo;: <code>LAB\svc_CM_SQL$</code></li>
-<li>&ldquo;Log on as a service&rdquo;: <code>LAB\svc_CM_SQL$</code></li>
+<li>&ldquo;Lock pages in memory&rdquo;: <code>DOMAIN\svc_CM_SQL$</code></li>
+<li>&ldquo;Log on as a service&rdquo;: <code>DOMAIN\svc_CM_SQL$</code></li>
 </ul>
 </li>
 <li>Windows Firewall
@@ -136,9 +136,15 @@
 <li>Destination: ConfigMgr Server IP Address</li>
 <li>Allow</li>
 <li>All profiles</li>
-<li>Name: &ldquo;ConfigMgr - SQL Traffic&rdquo;</li>
+<li>Name: <code>ConfigMgr - SQL Traffic</code></li>
 </ul>
 </li>
+</ul>
+</li>
+<li>New Local Group Preference
+<ul>
+<li>Add AD group <code>CM_Admins</code> to <code>Administrators</code></li>
+<li>Set group description to <code>GPO-Enforced Group</code></li>
 </ul>
 </li>
 </ul>
@@ -148,8 +154,8 @@
 <li>New Local Group Preference
 <ul>
 <li>Add AD group <code>LocalAdmin_Servers</code> to <code>Administrators</code></li>
-<li>Set group description to &ldquo;GPO-Enforced Group&rdquo;</li>
-<li>Enable &ldquo;Delete all member users&rdquo; and &ldquo;Delete all member groups&rdquo;</li>
+<li>Set group description to <code>GPO-Enforced Group</code></li>
+<li>Enable <code>Delete all member users</code> and <code>Delete all member groups</code></li>
 </ul>
 </li>
 </ul>
@@ -159,8 +165,8 @@
 <li>New Local Group Preference
 <ul>
 <li>Add AD group <code>LocalAdmin_Workstations</code> to <code>Administrators</code></li>
-<li>Set group description to &ldquo;GPO-Enforced Group&rdquo;</li>
-<li>Enable &ldquo;Delete all member users&rdquo; and &ldquo;Delete all member groups&rdquo;</li>
+<li>Set group description to <code>GPO-Enforced Group</code></li>
+<li>Enable <code>Delete all member users</code> and <code>Delete all member groups</code></li>
 </ul>
 </li>
 </ul>
@@ -168,8 +174,7 @@
 </ul>
 </section>
 <nav class=post-nav>
-<a class=prev href=https://ajf8729.com/guide/01-vm-creation/><span>←</span><span>Part 01: VM Creation & Initial Configuration</span></a>
-<a class=next href=https://ajf8729.com/guide/03-configmgr-sql-installation-configuration/><span>03 ConfigMgr - SQL Installation and Configuration</span><span>→</span></a>
+<a class=next href=https://ajf8729.com/guide/01-vm-creation/><span>Part 01: VM Creation & Initial Configuration</span><span>→</span></a>
 </nav>
 </article>
 </main>
