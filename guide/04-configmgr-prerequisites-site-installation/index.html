@@ -4,10 +4,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="04 ConfigMgr - Prerequisites and Site Installation">
+<meta name=twitter:title content="Part 04: ConfigMgr - Prerequisites and Site Installation">
+<meta name=twitter:description content="ConfigMgr - Prerequisites and Site Installation">
 <meta name=twitter:image content="https://ajf8729.com/icon.png">
-<title>04 ConfigMgr - Prerequisites and Site Installation - AJF8729</title>
-<meta name=description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
+<title>Part 04: ConfigMgr - Prerequisites and Site Installation - AJF8729</title>
+<meta name=description content="Install Windows features  https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path F:\SOURCE\WindowsFeatures.txt) -Verbose   Extend AD schema  https://github.com/ajf8729/Lab/blob/main/conf/ConfigMgr_ad_schema.ldf https://raw.githubusercontent.com/ajf8729/Lab/main/conf/ConfigMgr_ad_schema.ldf Save ConfigMgr_ad_schema.ldf to DC and edit it Find/Replace all DC=x with DC=ad,DC=domain,DC=com (substitute your domain DC) ldifde.exe -i -f ConfigMgr_ad_schema.ldf -v   WSUS Postinstall  &#34;C:\Program Files\Update Services\Tools\WsusUtil.exe&#34; postinstall SQL_INSTANCE_NAME=&#34;configmgr.ad.domain.tld&#34; CONTENT_DIR=&#34;F:\WSUS&#34; (replace configmgr.ad.domain.tld with the FQDN of you ConfigMgr server)   Install Windows 11 ADK  adksetup.exe /features OptionId.">
 <meta name=author content>
 <link rel="preload stylesheet" as=style href=https://ajf8729.com/app.min.css>
 <link rel=preload as=image href=https://ajf8729.com/theme.png>
@@ -16,17 +17,20 @@
 <link rel=icon href=https://ajf8729.com/favicon.ico>
 <link rel=apple-touch-icon href=https://ajf8729.com/apple-touch-icon.png>
 <meta name=generator content="Hugo 0.92.1">
-<meta property="og:title" content="04 ConfigMgr - Prerequisites and Site Installation">
-<meta property="og:description" content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
+<meta property="og:title" content="Part 04: ConfigMgr - Prerequisites and Site Installation">
+<meta property="og:description" content="ConfigMgr - Prerequisites and Site Installation">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ajf8729.com/guide/04-configmgr-prerequisites-site-installation/"><meta property="article:section" content="guide">
-<meta itemprop=name content="04 ConfigMgr - Prerequisites and Site Installation">
-<meta itemprop=description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
-<meta itemprop=wordCount content="136">
+<meta property="article:published_time" content="2022-02-07T17:00:00+00:00">
+<meta property="article:modified_time" content="2022-02-07T17:00:00+00:00">
+<meta itemprop=name content="Part 04: ConfigMgr - Prerequisites and Site Installation">
+<meta itemprop=description content="ConfigMgr - Prerequisites and Site Installation"><meta itemprop=datePublished content="2022-02-07T17:00:00+00:00">
+<meta itemprop=dateModified content="2022-02-07T17:00:00+00:00">
+<meta itemprop=wordCount content="106">
 <meta itemprop=keywords content>
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="04 ConfigMgr - Prerequisites and Site Installation">
-<meta name=twitter:description content="Create NO_SMS_ON_DRIVE.SMS files  New-Item -Path 'C:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null New-Item -Path 'E:\' -Name &#34;NO_SMS_ON_DRIVE.SMS&#34; -ItemType File | Out-Null   Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles  https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt Install-WindowsFeature -Name (Get-Content -Path &#34;WindowsFeatures.txt&#34;)   Extend AD schema  Copy ConfigMgr_ad_schema.ldf to DC Edit ConfigMgr_ad_schema.ldf  Find/Replace all DC=x with DC=lab,DC=dev,DC=ajf8729,DC=com   ldifde.">
+<meta name=twitter:title content="Part 04: ConfigMgr - Prerequisites and Site Installation">
+<meta name=twitter:description content="ConfigMgr - Prerequisites and Site Installation">
 </head>
 <body class=not-ready data-menu=true>
 <header class=header>
@@ -51,68 +55,52 @@
 <article class=post-single>
 <header class=post-title>
 <p>
-<time>Jan 1, 1</time>
+<time>Feb 7, 2022</time>
 </p>
-<h1>04 ConfigMgr - Prerequisites and Site Installation</h1>
+<h1>Part 04: ConfigMgr - Prerequisites and Site Installation</h1>
 </header>
 <section class=post-content><ol>
-<li>Create NO_SMS_ON_DRIVE.SMS files
-<ul>
-<li><code>New-Item -Path 'C:\' -Name "NO_SMS_ON_DRIVE.SMS" -ItemType File | Out-Null</code></li>
-<li><code>New-Item -Path 'E:\' -Name "NO_SMS_ON_DRIVE.SMS" -ItemType File | Out-Null</code></li>
-</ul>
-</li>
-<li>Install Windows features for Primary Site, Management Point, Distribution Point, State Migration Point, and Software Update Point roles
+<li>Install Windows features
 <ul>
 <li><a href=https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt>https://github.com/ajf8729/Lab/blob/main/conf/WindowsFeatures.txt</a></li>
 <li><a href=https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt>https://raw.githubusercontent.com/ajf8729/Lab/main/conf/WindowsFeatures.txt</a></li>
-<li><code>Install-WindowsFeature -Name (Get-Content -Path "WindowsFeatures.txt")</code></li>
+<li><code>Install-WindowsFeature -Name (Get-Content -Path F:\SOURCE\WindowsFeatures.txt) -Verbose</code></li>
 </ul>
 </li>
 <li>Extend AD schema
 <ul>
-<li>Copy <code>ConfigMgr_ad_schema.ldf</code> to DC</li>
-<li>Edit <code>ConfigMgr_ad_schema.ldf</code>
-<ul>
-<li>Find/Replace all <code>DC=x</code> with <code>DC=lab,DC=dev,DC=ajf8729,DC=com</code></li>
-</ul>
-</li>
+<li><a href=https://github.com/ajf8729/Lab/blob/main/conf/ConfigMgr_ad_schema.ldf>https://github.com/ajf8729/Lab/blob/main/conf/ConfigMgr_ad_schema.ldf</a></li>
+<li><a href=https://raw.githubusercontent.com/ajf8729/Lab/main/conf/ConfigMgr_ad_schema.ldf>https://raw.githubusercontent.com/ajf8729/Lab/main/conf/ConfigMgr_ad_schema.ldf</a></li>
+<li>Save <code>ConfigMgr_ad_schema.ldf</code> to DC and edit it</li>
+<li>Find/Replace all <code>DC=x</code> with <code>DC=ad,DC=domain,DC=com</code> (substitute your domain DC)</li>
 <li><code>ldifde.exe -i -f ConfigMgr_ad_schema.ldf -v</code></li>
 </ul>
 </li>
 <li>WSUS Postinstall
 <ul>
-<li><code>wsusutil.exe postinstall SQL_INSTANCE_NAME="labcm01.lab.dev.ajf8729.com" CONTENT_DIR="F:\WSUS"</code></li>
+<li><code>"C:\Program Files\Update Services\Tools\WsusUtil.exe" postinstall SQL_INSTANCE_NAME="configmgr.ad.domain.tld" CONTENT_DIR="F:\WSUS"</code> (replace <code>configmgr.ad.domain.tld</code> with the FQDN of you ConfigMgr server)</li>
 </ul>
 </li>
-<li>Install Windows ADK
+<li>Install Windows 11 ADK
 <ul>
-<li><a href=https://github.com/ajf8729/Lab/blob/main/03b-ADK.ps1>https://github.com/ajf8729/Lab/blob/main/03b-ADK.ps1</a></li>
-<li><code>adksetup.exe /features OptionId.DeploymentTools OptionId.ImagingAndConfigurationDesigner OptionId.ICDConfigurationDesigner OptionId.UserStateMigrationTool /ceip on</code></li>
-<li><code>adkwinpesetup.exe /features OptionId.WindowsPreinstallationEnvironment /ceip on</code></li>
+<li><code>adksetup.exe /features OptionId.DeploymentTools OptionId.ImagingAndConfigurationDesigner OptionId.ICDConfigurationDesigner OptionId.UserStateMigrationTool /ceip on /quiet</code></li>
+<li><code>adkwinpesetup.exe /features OptionId.WindowsPreinstallationEnvironment /ceip on /quiet</code></li>
 </ul>
 </li>
 <li>Download updated setup files
 <ul>
-<li><code>\Configmgr_TechPreview2110\SMSSETUP\BIN\X64\setupdl.exe "F:\SOURCE\Downloads"</code></li>
+<li><code>F:\SOURCE\MEM_Configmgr_2103\SMSSETUP\BIN\X64\setupdl.exe" "F:\SOURCE\Downloads"</code></li>
 </ul>
 </li>
 <li>Install ConfigMgr primary site
 <ul>
 <li><a href=https://github.com/ajf8729/Lab/blob/main/conf/ConfigMgr.ini>https://github.com/ajf8729/Lab/blob/main/conf/ConfigMgr.ini</a></li>
 <li><a href=https://raw.githubusercontent.com/ajf8729/Lab/main/conf/ConfigMgr.ini>https://raw.githubusercontent.com/ajf8729/Lab/main/conf/ConfigMgr.ini</a></li>
-<li><code>setup.exe /script ConfigMgr.ini</code></li>
+<li>Update fields in ini file as required</li>
+<li><code>F:\SOURCE\MEM_Configmgr_2103\SMSSETUP\BIN\X64\setup.exe /script F:\SOURCE\ConfigMgr.ini</code></li>
 </ul>
 </li>
-<li>Restart LABCM01</li>
-<li>Install latest site update (2111 as of 2021-11-01)
-<ul>
-<li><code>Import-Module -FullyQualifiedName "$($ENV:SMS_ADMIN_UI_PATH)\..\ConfigurationManager.psd1"</code></li>
-<li><code>Set-Location -Path "LAB:"</code></li>
-<li><code>Invoke-CMSiteUpdatePrerequisiteCheck -Name "Configuration Manager Technical Preview 2111" -Verbose</code></li>
-<li><code>Install-CMSiteUpdate -Name "Configuration Manager Technical Preview 2111" -Force -Verbose</code></li>
-</ul>
-</li>
+<li>Install latest site update(s) (2111 and KB12959506 Hotfix as of 2022-02-07)</li>
 </ol>
 </section>
 <nav class=post-nav>
