@@ -1,4 +1,11 @@
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
-Install-PackageProvider -Name NuGet -Force
-Install-Script -Name Get-WindowsAutoPilotInfo -Force
+Write-Host 'Setting execution policy to Unrestricted...' -ForegroundColor Green
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force | Out-Null
+
+Write-Host 'Installing NuGet package provider...' -ForegroundColor Green
+Install-PackageProvider -Name NuGet -Force | Out-Null
+
+Write-Host 'Installing Get-WindowsAutoPilotInfo script...' -ForegroundColor Green
+Install-Script -Name Get-WindowsAutoPilotInfo -Force | Out-Null
+
+Write-Host 'Executing "Get-WindowsAutoPilotInfo -Online"...' -ForegroundColor Green
 Get-WindowsAutoPilotInfo -Online
