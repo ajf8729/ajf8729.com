@@ -10,5 +10,5 @@ Install-Script -Name Get-WindowsAutoPilotInfo -Force | Out-Null
 Write-Host 'Installing WindowsAutopilotIntune module...' -ForegroundColor Green
 Install-Module -Name WindowsAutopilotIntune -Force | Out-Null
 
-Write-Host 'Executing "Get-WindowsAutoPilotInfo -Online"...' -ForegroundColor Green
-Get-WindowsAutoPilotInfo -Online
+Write-Host 'Executing "Get-WindowsAutoPilotInfo -Online -Assign"...' -ForegroundColor Green
+Get-WindowsAutoPilotInfo -Online -Assign
