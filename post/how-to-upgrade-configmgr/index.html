@@ -7,18 +7,14 @@
 <a href=/post/>Posts</a>
 <a href=/guide/>Guides</a>
 <a href=/certificate-authorities/>Certificate Authorities</a></nav><nav class=social><a class=twitter style=--url:url(./twitter.svg) href=https://twitter.com/ajf8729 target=_blank></a>
-<a class=github style=--url:url(./github.svg) href=https://github.com/ajf8729 target=_blank></a></nav></header><main class=main><article class=post-single><header class=post-title><p><time>Sep 7, 2021</time></p><h1>How to Upgrade ConfigMgr</h1></header><section class=post-content><p>The following will show you how to upgrade a ConfigMgr site to the latest available update.</p><pre><code># Import the ConfigurationManager module
-Import-Module -Name ConfigurationManager
-
-# Get the site code
-$SiteCode = (Get-CimInstance -Namespace ROOT/SMS -ClassName SMS_ProviderLocation).SiteCode
-
-# Change to the site psdrive
-Set-Location -Path &quot;$($SiteCode):&quot;
-
-# Find the latest update
-$LatestSiteUpdate = (Get-CMSiteUpdate -Fast | Sort-Object -Descending -Property LastUpdateTime | Select-Object -First 1).Name
-
-# Install the update
-Install-CMSiteUpdate -Name $LatestSiteUpdate -Confirm:$false -Force
-</code></pre><p>The above script also available on <a href=https://github.com/ajf8729/Toolbox/blob/main/ConfigMgr/Install-LatestSiteUpdate.ps1>GitHub</a>.</p></section></article></main><footer class=footer><p>&copy; 2022 <a href=https://ajf8729.com/>AJF8729</a></p><p>Powered by <a href=https://gohugo.io/ rel=noopener target=_blank>Hugo️️</a>️</p><p><a href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>Paper 5.1</a></p></footer></body></html>
+<a class=github style=--url:url(./github.svg) href=https://github.com/ajf8729 target=_blank></a></nav></header><main class=main><article class=post-single><header class=post-title><p><time>Sep 7, 2021</time></p><h1>How to Upgrade ConfigMgr</h1></header><section class=post-content><p>The following will show you how to upgrade a ConfigMgr site to the latest available update.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span><span style=color:#75715e># Import the ConfigurationManager module</span>
+</span></span><span style=display:flex><span>Import-Module -Name ConfigurationManager
+</span></span><span style=display:flex><span><span style=color:#75715e># Get the site code</span>
+</span></span><span style=display:flex><span>$SiteCode = (Get-CimInstance -Namespace ROOT/SMS -ClassName SMS_ProviderLocation).SiteCode
+</span></span><span style=display:flex><span><span style=color:#75715e># Change to the site psdrive</span>
+</span></span><span style=display:flex><span>Set-Location -Path <span style=color:#e6db74>&#34;</span>$($SiteCode)<span style=color:#e6db74>:&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Find the latest update</span>
+</span></span><span style=display:flex><span>$LatestSiteUpdate = (Get-CMSiteUpdate -Fast | Sort-Object -Descending -Property LastUpdateTime | Select-Object -First 1).Name
+</span></span><span style=display:flex><span><span style=color:#75715e># Install the update</span>
+</span></span><span style=display:flex><span>Install-CMSiteUpdate -Name $LatestSiteUpdate -Confirm<span style=color:#960050;background-color:#1e0010>:</span>$false -Force
+</span></span></code></pre></div><p>The above script also available on <a href=https://github.com/ajf8729/Toolbox/blob/main/ConfigMgr/Install-LatestSiteUpdate.ps1>GitHub</a>.</p></section></article></main><footer class=footer><p>&copy; 2022 <a href=https://ajf8729.com/>AJF8729</a></p><p>Powered by <a href=https://gohugo.io/ rel=noopener target=_blank>Hugo️️</a>️</p><p><a href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>Paper 5.1</a></p></footer></body></html>
