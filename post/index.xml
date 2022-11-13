@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>AJF8729</title>
-    <link>https://ajf8729.com/</link>
-    <description>Recent content on AJF8729</description>
+    <title>Posts on AJF8729</title>
+    <link>https://ajf8729.com/post/</link>
+    <description>Recent content in Posts on AJF8729</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 07 Sep 2021 06:20:48 -0400</lastBuildDate><atom:link href="https://ajf8729.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Sep 2021 06:20:48 -0400</lastBuildDate><atom:link href="https://ajf8729.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Upgrade ConfigMgr</title>
       <link>https://ajf8729.com/post/how-to-upgrade-configmgr/</link>

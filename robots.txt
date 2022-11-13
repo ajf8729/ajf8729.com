@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://ajf8729.com/sitemap.xml
