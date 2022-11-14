@@ -12,9 +12,9 @@
       <pubDate>Sun, 13 Nov 2022 22:34:04 -0500</pubDate>
       
       <guid>https://ajf8729.com/about-me/</guid>
-      <description>I&amp;rsquo;m AJ, an IT professional in the Microsoft space for over ten years. I mostly work with ConfigMgr, Intune, Active Directory, and Azure AD. I&amp;rsquo;m currently a ConfigMgr Customer Engineer for Microsoft as a vendor. I&amp;rsquo;m also one of the admins of the WinAdmins Community.
-Endpoint management, AuthN/AuthZ, and security/infosec all greatly interest me. Ask me about deploying internet-accessible domain controllers!
-In my free time, I enjoy learning and helping others on various social media platforms with tech-related stuff, tinkering in my home lab, and writing the occasional technical blog post about stuff I do or find interesting.</description>
+      <description>I&amp;rsquo;m AJ, an IT professional in the Microsoft space for over ten years. I&amp;rsquo;m originally from South Shore region of Massachusetts, and currently reside in the Rochester, New York area.
+I mostly work with ConfigMgr, Intune, Active Directory, and Azure AD. I&amp;rsquo;m currently a ConfigMgr Customer Engineer for Microsoft as a vendor, and formally a systems administrator/engineer for a university.
+I&amp;rsquo;m also one of the admins of the WinAdmins Community on Discord.</description>
     </item>
     
     <item>
@@ -33,8 +33,7 @@ In my free time, I enjoy learning and helping others on various social media pla
       <pubDate>Sun, 13 Nov 2022 20:30:00 -0500</pubDate>
       
       <guid>https://ajf8729.com/resume/</guid>
-      <description>Summary An enthusiastic and highly skilled IT professional in the Microsoft ecosystem, with excellent technical abilities and communication skills. Highly experienced in managing client and server operating systems via Microsoft Endpoint Configuration Manager, Active Directory/Group Policy, and PowerShell. Moderately experienced with Azure Active Directory and Intune.
-Experience ConfigMgr Customer Engineer JDA Technical Services Group 2021-11 - Present Standard Product Work Shops - Training In-Depth Product Reviews - White Board (Chalk Talk) Sessions Health Checks / Assessments Post Operational Review of Product Implementations Product Upgrade / Migration Assessments Systems Performance Reviews Windows System Administrator/Engineer Rochester Institute of Technology 2012-09 - 2020-04 Managed ~5,000 Windows client endpoints and ~300 Windows server endpoints across 1 main campus, and 2 remote campuses, via Microsoft Endpoint Configuration Manger (ConfigMgr).</description>
+      <description>Last updated: 2022-11-13</description>
     </item>
     
     <item>
@@ -43,7 +42,7 @@ Experience ConfigMgr Customer Engineer JDA Technical Services Group 2021-11 - Pr
       <pubDate>Thu, 03 Feb 2022 00:10:41 +0000</pubDate>
       
       <guid>https://ajf8729.com/certificate-authority/</guid>
-      <description>AJF8729 Lab Root Certificate Authority</description>
+      <description> Subject: CN=AJF8729 ROOT CA 02 Thumbprint: 2C:BF:66:D7:61:BB:A7:E7:05:A5:9B:FA:F6:18:AA:37:34:85:44:B9 Valid From: 2022-02-03 00:10:41 UTC Valid To: 2042-02-03 00:20:40 UTC AIA: http://pki.ajf8729.com/AJF8729-ROOT-CA-02.crt CDP: http://pki.ajf8729.com/AJF8729-ROOT-CA-02.crl </description>
     </item>
     
     <item>
