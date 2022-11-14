@@ -7,22 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 07 Sep 2021 06:20:48 -0400</lastBuildDate><atom:link href="https://ajf8729.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Certificate Authorities</title>
-      <link>https://ajf8729.com/certificate-authorities/</link>
-      <pubDate>Sun, 20 Feb 2022 17:00:00 +0000</pubDate>
+      <title>Resume</title>
+      <link>https://ajf8729.com/resume/</link>
+      <pubDate>Sun, 13 Nov 2022 20:30:00 -0500</pubDate>
       
-      <guid>https://ajf8729.com/certificate-authorities/</guid>
-      <description>Certificate Authorities</description>
+      <guid>https://ajf8729.com/resume/</guid>
+      <description>Summary An enthusiastic and highly skilled IT professional in the Microsoft ecosystem, with excellent technical abilities and communication skills. Highly experienced in managing client and server operating systems via Microsoft Endpoint Configuration Manager, Active Directory/Group Policy, and PowerShell. Moderately experienced with Azure Active Directory and Intune.
+Experience ConfigMgr Customer Engineer JDA Technical Services Group 2021-11 - Present Standard Product Work Shops - Training In-Depth Product Reviews - White Board (Chalk Talk) Sessions Health Checks / Assessments Post Operational Review of Product Implementations Product Upgrade / Migration Assessments Systems Performance Reviews Windows System Administrator/Engineer Rochester Institute of Technology 2012-09 - 2020-04 Managed ~5,000 Windows client endpoints and ~300 Windows server endpoints across 1 main campus, and 2 remote campuses, via Microsoft Endpoint Configuration Manger (ConfigMgr).</description>
     </item>
     
     <item>
-      <title>Resume</title>
-      <link>https://ajf8729.com/resume/</link>
-      <pubDate>Mon, 04 Oct 2021 09:00:00 -0400</pubDate>
+      <title>Certificate Authority</title>
+      <link>https://ajf8729.com/certificate-authority/</link>
+      <pubDate>Thu, 03 Feb 2022 00:10:41 +0000</pubDate>
       
-      <guid>https://ajf8729.com/resume/</guid>
-      <description>Anthony J. Fontanez Email: ajf@anthonyfontanez.com LinkedIn: https://linkedin.com/in/ajf8729 Blog: https://anthonyfontanez.com/ GitHub: https://github.com/ajf8729 Resume: https://anthonyfontanez.com/Resume.pdf Summary An enthusiastic and highly skilled IT professional in the Microsoft ecosystem, with excellent technical abilities and communication skills. Highly experienced in managing client and server operating systems via Microsoft Endpoint Configuration Manager, Active Directory/Group Policy, and PowerShell. Moderately experienced with Azure Active Directory and Intune.
-Experience System Administrator Rochester Institute of Technology 2012-09 - 2020-04 Managed ~5,000 Windows client endpoints and ~300 Windows server endpoints across 1 main campus, and 2 remote campuses, via Microsoft Endpoint Configuration Manger (ConfigMgr).</description>
+      <guid>https://ajf8729.com/certificate-authority/</guid>
+      <description>AJF8729 Lab Root Certificate Authority</description>
     </item>
     
     <item>
@@ -32,17 +32,7 @@ Experience System Administrator Rochester Institute of Technology 2012-09 - 2020
       
       <guid>https://ajf8729.com/posts/how-to-upgrade-configmgr/</guid>
       <description>The following will show you how to upgrade a ConfigMgr site to the latest available update.
-# Import the ConfigurationManager module Import-Module -Name ConfigurationManager # Get the site code $SiteCode = (Get-CimInstance -Namespace ROOT/SMS -ClassName SMS_ProviderLocation).SiteCode # Change to the site psdrive Set-Location -Path &amp;#34;$($SiteCode):&amp;#34; # Find the latest update $LatestSiteUpdate = (Get-CMSiteUpdate -Fast | Sort-Object -Descending -Property LastUpdateTime | Select-Object -First 1).Name # Install the update Install-CMSiteUpdate -Name $LatestSiteUpdate -Confirm:$false -Force The above script also available on GitHub.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://ajf8729.com/about/</link>
-      <pubDate>Tue, 24 Aug 2021 13:00:00 -0400</pubDate>
-      
-      <guid>https://ajf8729.com/about/</guid>
-      <description>Windows Sysadmin, focused on ConfigMgr, Intune, PowerShell, Active Directory, Azure AD, &amp;amp; Security. Administration team member for the WinAdmins Community.
-This site is primarily for things related to my lab, please see AJF Tech Chatter for my production blog.</description>
+1 2 3 4 5 6 7 8 9 10 # Import the ConfigurationManager module Import-Module -Name ConfigurationManager # Get the site code $SiteCode = (Get-CimInstance -Namespace ROOT/SMS -ClassName SMS_ProviderLocation).SiteCode # Change to the site psdrive Set-Location -Path &amp;#34;$($SiteCode):&amp;#34; # Find the latest update $LatestSiteUpdate = (Get-CMSiteUpdate -Fast | Sort-Object -Descending -Property LastUpdateTime | Select-Object -First 1).</description>
     </item>
     
   </channel>

@@ -13,7 +13,7 @@
       
       <guid>https://ajf8729.com/posts/how-to-upgrade-configmgr/</guid>
       <description>The following will show you how to upgrade a ConfigMgr site to the latest available update.
-# Import the ConfigurationManager module Import-Module -Name ConfigurationManager # Get the site code $SiteCode = (Get-CimInstance -Namespace ROOT/SMS -ClassName SMS_ProviderLocation).SiteCode # Change to the site psdrive Set-Location -Path &amp;#34;$($SiteCode):&amp;#34; # Find the latest update $LatestSiteUpdate = (Get-CMSiteUpdate -Fast | Sort-Object -Descending -Property LastUpdateTime | Select-Object -First 1).Name # Install the update Install-CMSiteUpdate -Name $LatestSiteUpdate -Confirm:$false -Force The above script also available on GitHub.</description>
+1 2 3 4 5 6 7 8 9 10 # Import the ConfigurationManager module Import-Module -Name ConfigurationManager # Get the site code $SiteCode = (Get-CimInstance -Namespace ROOT/SMS -ClassName SMS_ProviderLocation).SiteCode # Change to the site psdrive Set-Location -Path &amp;#34;$($SiteCode):&amp;#34; # Find the latest update $LatestSiteUpdate = (Get-CMSiteUpdate -Fast | Sort-Object -Descending -Property LastUpdateTime | Select-Object -First 1).</description>
     </item>
     
   </channel>
