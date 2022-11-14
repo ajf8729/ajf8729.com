@@ -7,11 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 13 Nov 2022 22:08:51 -0500</lastBuildDate><atom:link href="https://ajf8729.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>About Me</title>
+      <link>https://ajf8729.com/about-me/</link>
+      <pubDate>Sun, 13 Nov 2022 22:34:04 -0500</pubDate>
+      
+      <guid>https://ajf8729.com/about-me/</guid>
+      <description>I&amp;rsquo;m AJ, an IT professional in the Microsoft space for over ten years. I mostly work with ConfigMgr, Intune, Active Directory, and Azure AD. I&amp;rsquo;m currently a ConfigMgr Customer Engineer for Microsoft as a vendor. I&amp;rsquo;m also one of the admins of the WinAdmins Community.
+Endpoint management, AuthN/AuthZ, and security/infosec all greatly interest me. Ask me about deploying internet-accessible domain controllers!
+In my free time, I enjoy learning and helping others on various social media platforms with tech-related stuff, tinkering in my home lab, and writing the occasional technical blog post about stuff I do or find interesting.</description>
+    </item>
+    
+    <item>
       <title>Finding AD Accounts Explicitly Configured To Use RC4 Kerberos</title>
-      <link>https://ajf8729.com/posts/finding-rc4-accounts/</link>
+      <link>https://ajf8729.com/post/finding-rc4-accounts/</link>
       <pubDate>Sun, 13 Nov 2022 22:08:51 -0500</pubDate>
       
-      <guid>https://ajf8729.com/posts/finding-rc4-accounts/</guid>
+      <guid>https://ajf8729.com/post/finding-rc4-accounts/</guid>
       <description>In response to CVE-2022-37966, the following PowerShell will find all accounts (users, computers, managed service accounts, and group managed service accounts) explicitly configured to use RC4 Kerberos encryption only:
 1 2 3 4 5 Get-ADObject -Filter &amp;#34;objectClass -eq &amp;#39;user&amp;#39;&amp;#34; -Properties msDS-SupportedEncryptionTypes | Where-Object -FilterScript { (($_.&amp;#34;msDS-SupportedEncryptionTypes&amp;#34; -band 0x3f) -ne 0) -and (($_.&amp;#34;msDS-SupportedEncryptionTypes&amp;#34; -band 0x38) -eq 0) } The above script is also available in my GitHub.</description>
     </item>
@@ -37,10 +48,10 @@ Experience ConfigMgr Customer Engineer JDA Technical Services Group 2021-11 - Pr
     
     <item>
       <title>How to Upgrade ConfigMgr</title>
-      <link>https://ajf8729.com/posts/how-to-upgrade-configmgr/</link>
+      <link>https://ajf8729.com/post/how-to-upgrade-configmgr/</link>
       <pubDate>Tue, 07 Sep 2021 06:20:48 -0400</pubDate>
       
-      <guid>https://ajf8729.com/posts/how-to-upgrade-configmgr/</guid>
+      <guid>https://ajf8729.com/post/how-to-upgrade-configmgr/</guid>
       <description>The following will show you how to upgrade a ConfigMgr site to the latest available update.
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 # Import the ConfigurationManager module Import-Module -Name ConfigurationManager # Get the site code $SiteCode = (Get-CimInstance -Namespace ROOT/SMS -ClassName SMS_ProviderLocation).SiteCode # Change to the site psdrive Set-Location -Path &amp;#34;$($SiteCode):&amp;#34; # Find the latest update $LatestSiteUpdate = (Get-CMSiteUpdate -Fast | Sort-Object -Descending -Property LastUpdateTime | Select-Object -First 1).</description>
     </item>
