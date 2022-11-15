@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 13 Nov 2022 22:08:51 -0500</lastBuildDate><atom:link href="https://ajf8729.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Testing ConfigMgr HTTPS Management Points</title>
+      <link>https://ajf8729.com/post/testing-cm-https-mps/</link>
+      <pubDate>Tue, 15 Nov 2022 07:54:00 -0500</pubDate>
+      
+      <guid>https://ajf8729.com/post/testing-cm-https-mps/</guid>
+      <description>How to test ConfigMgr HTTPS Management Points using PowerShell</description>
+    </item>
+    
+    <item>
       <title>Finding AD Accounts Explicitly Configured To Use RC4 Kerberos</title>
       <link>https://ajf8729.com/post/finding-rc4-accounts/</link>
       <pubDate>Sun, 13 Nov 2022 22:08:51 -0500</pubDate>
