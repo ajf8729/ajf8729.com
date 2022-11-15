@@ -23,8 +23,7 @@ I&amp;rsquo;m also one of the admins of the WinAdmins Community on Discord.</des
       <pubDate>Sun, 13 Nov 2022 22:08:51 -0500</pubDate>
       
       <guid>https://ajf8729.com/post/finding-rc4-accounts/</guid>
-      <description>In response to CVE-2022-37966, the following PowerShell will find all accounts (users, computers, managed service accounts, and group managed service accounts) explicitly configured to use RC4 Kerberos encryption only:
-1 2 3 4 5 Get-ADObject -Filter &amp;#34;objectClass -eq &amp;#39;user&amp;#39;&amp;#34; -Properties msDS-SupportedEncryptionTypes | Where-Object -FilterScript { (($_.&amp;#34;msDS-SupportedEncryptionTypes&amp;#34; -band 0x3f) -ne 0) -and (($_.&amp;#34;msDS-SupportedEncryptionTypes&amp;#34; -band 0x38) -eq 0) } The above script is also available in my GitHub.</description>
+      <description>Tracking down AD account configured to use only RC4 Kerberos encryption with PowerShell</description>
     </item>
     
     <item>
@@ -51,8 +50,7 @@ I&amp;rsquo;m also one of the admins of the WinAdmins Community on Discord.</des
       <pubDate>Tue, 07 Sep 2021 06:20:48 -0400</pubDate>
       
       <guid>https://ajf8729.com/post/how-to-upgrade-configmgr/</guid>
-      <description>The following will show you how to upgrade a ConfigMgr site to the latest available update.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 # Import the ConfigurationManager module Import-Module -Name ConfigurationManager # Get the site code $SiteCode = (Get-CimInstance -Namespace ROOT/SMS -ClassName SMS_ProviderLocation).SiteCode # Change to the site psdrive Set-Location -Path &amp;#34;$($SiteCode):&amp;#34; # Find the latest update $LatestSiteUpdate = (Get-CMSiteUpdate -Fast | Sort-Object -Descending -Property LastUpdateTime | Select-Object -First 1).</description>
+      <description>How to upgrade a ConfigMgr site using the least amount of PowerShell as possible!</description>
     </item>
     
   </channel>
