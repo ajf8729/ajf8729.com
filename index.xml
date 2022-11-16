@@ -5,7 +5,16 @@
     <link>https://ajf8729.com/</link>
     <description>Recent content on AJF8729</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 15 Nov 2022 07:54:00 -0500</lastBuildDate><atom:link href="https://ajf8729.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Nov 2022 09:15:22 -0500</lastBuildDate><atom:link href="https://ajf8729.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gMSA AutoSPN</title>
+      <link>https://ajf8729.com/post/gmsa-autospn/</link>
+      <pubDate>Wed, 16 Nov 2022 09:15:22 -0500</pubDate>
+      
+      <guid>https://ajf8729.com/post/gmsa-autospn/</guid>
+      <description>Configuring permissions for group managed service accounts (gMSAs) to self-register service principal names (SMNs)</description>
+    </item>
+    
     <item>
       <title>Testing ConfigMgr HTTPS Management Points</title>
       <link>https://ajf8729.com/post/testing-cm-https-mps/</link>
