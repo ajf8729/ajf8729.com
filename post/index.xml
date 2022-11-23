@@ -7,14 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 13 Nov 2022 22:08:51 -0500</lastBuildDate><atom:link href="https://ajf8729.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Removing Desktop Analytics from your ConfigMgr Site</title>
+      <link>https://ajf8729.com/post/removing-desktop-analytics/</link>
+      <pubDate>Wed, 23 Nov 2022 15:24:33 -0500</pubDate>
+      
+      <guid>https://ajf8729.com/post/removing-desktop-analytics/</guid>
+      <description>How to remove Desktop Analytics and clean up everything left behind</description>
+    </item>
+    
+    <item>
       <title>Enabling Configuration Baselines for Co-managed Clients</title>
       <link>https://ajf8729.com/post/enabling-baselines-for-comanaged-devices/</link>
       <pubDate>Mon, 21 Nov 2022 14:03:52 -0500</pubDate>
       
       <guid>https://ajf8729.com/post/enabling-baselines-for-comanaged-devices/</guid>
-      <description>Problem: You&amp;rsquo;ve shifted the &amp;ldquo;Device Configuration&amp;rdquo; workload in your ConfigMgr site to Intune, and your existing Configuration Baselines are no longer applying, and there&amp;rsquo;s a lot of them.
-Solution: Spend the next two hours clicking away in the console PowerShell of course!
-1 Get-CMBaseline -Fast | Set-CMBaseline -AllowComanagedClients $true Running the above one-liner will enable all of your existing baselines to be run on co-managed clients even when the workload has been shifted to Intune.</description>
+      <description>How to quickly enable all of your configuration baselines to run on co-managed devices</description>
     </item>
     
     <item>
