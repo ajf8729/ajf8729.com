@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>AJF8729</title>
-    <link>https://ajf8729.com/</link>
-    <description>Recent content on AJF8729</description>
+    <title>PowerShell on AJF8729</title>
+    <link>https://ajf8729.com/tags/powershell/</link>
+    <description>Recent content in PowerShell on AJF8729</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 23 Nov 2022 15:24:33 -0500</lastBuildDate><atom:link href="https://ajf8729.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Nov 2022 15:24:33 -0500</lastBuildDate><atom:link href="https://ajf8729.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Removing Desktop Analytics from your ConfigMgr Site</title>
       <link>https://ajf8729.com/post/removing-desktop-analytics/</link>
@@ -25,15 +25,6 @@
     </item>
     
     <item>
-      <title>gMSA AutoSPN</title>
-      <link>https://ajf8729.com/post/gmsa-autospn/</link>
-      <pubDate>Wed, 16 Nov 2022 09:15:22 -0500</pubDate>
-      
-      <guid>https://ajf8729.com/post/gmsa-autospn/</guid>
-      <description>Configuring permissions for group managed service accounts (gMSAs) to self-register service principal names (SPNs)</description>
-    </item>
-    
-    <item>
       <title>Testing ConfigMgr HTTPS Management Points</title>
       <link>https://ajf8729.com/post/testing-cm-https-mps/</link>
       <pubDate>Tue, 15 Nov 2022 07:54:00 -0500</pubDate>
@@ -43,41 +34,12 @@
     </item>
     
     <item>
-      <title>About Me</title>
-      <link>https://ajf8729.com/about-me/</link>
-      <pubDate>Sun, 13 Nov 2022 22:34:04 -0500</pubDate>
-      
-      <guid>https://ajf8729.com/about-me/</guid>
-      <description>I&amp;rsquo;m AJ, an IT professional in the Microsoft space for over ten years. I&amp;rsquo;m originally from South Shore region of Massachusetts, and currently reside in the Rochester, New York area.
-I mostly work with ConfigMgr, Intune, Active Directory, and Azure AD. I&amp;rsquo;m currently a ConfigMgr Customer Engineer for Microsoft as a vendor, and formally a systems administrator/engineer for a university.
-I&amp;rsquo;m also one of the admins of the WinAdmins Community on Discord.</description>
-    </item>
-    
-    <item>
       <title>Finding AD Accounts Explicitly Configured To Use RC4 Kerberos</title>
       <link>https://ajf8729.com/post/finding-rc4-accounts/</link>
       <pubDate>Sun, 13 Nov 2022 22:08:51 -0500</pubDate>
       
       <guid>https://ajf8729.com/post/finding-rc4-accounts/</guid>
       <description>Tracking down AD account configured to use only RC4 Kerberos encryption with PowerShell</description>
-    </item>
-    
-    <item>
-      <title>Resume</title>
-      <link>https://ajf8729.com/resume/</link>
-      <pubDate>Sun, 13 Nov 2022 20:30:00 -0500</pubDate>
-      
-      <guid>https://ajf8729.com/resume/</guid>
-      <description>Last updated: 2022-11-13</description>
-    </item>
-    
-    <item>
-      <title>Certificate Authority</title>
-      <link>https://ajf8729.com/certificate-authority/</link>
-      <pubDate>Thu, 03 Feb 2022 00:10:41 +0000</pubDate>
-      
-      <guid>https://ajf8729.com/certificate-authority/</guid>
-      <description> Subject: CN=AJF8729 ROOT CA 02 Thumbprint: 2C:BF:66:D7:61:BB:A7:E7:05:A5:9B:FA:F6:18:AA:37:34:85:44:B9 Valid From: 2022-02-03 00:10:41 UTC Valid To: 2042-02-03 00:20:40 UTC AIA: http://pki.ajf8729.com/AJF8729-ROOT-CA-02.crt CDP: http://pki.ajf8729.com/AJF8729-ROOT-CA-02.crl </description>
     </item>
     
     <item>
