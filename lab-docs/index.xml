@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lab Docs on AJF8729</title>
+    <link>https://ajf8729.com/lab-docs/</link>
+    <description>Recent content in Lab Docs on AJF8729</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://ajf8729.com/lab-docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Production Lab 1</title>
+      <link>https://ajf8729.com/lab-docs/production-lab-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajf8729.com/lab-docs/production-lab-1/</guid>
+      <description>corp.ajf.one</description>
+    </item>
+    
+    <item>
+      <title>Production Lab 2</title>
+      <link>https://ajf8729.com/lab-docs/production-lab-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajf8729.com/lab-docs/production-lab-2/</guid>
+      <description>ad.ajf8729.com</description>
+    </item>
+    
+    <item>
+      <title>Technical Preview Lab</title>
+      <link>https://ajf8729.com/lab-docs/technical-preview-lab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajf8729.com/lab-docs/technical-preview-lab/</guid>
+      <description>beta.ajf8729.com</description>
+    </item>
+    
+    <item>
+      <title>Test Lab</title>
+      <link>https://ajf8729.com/lab-docs/test-lab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajf8729.com/lab-docs/test-lab/</guid>
+      <description>lab.ajf8729.com</description>
+    </item>
+    
+  </channel>
+</rss>
