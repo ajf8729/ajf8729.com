@@ -5,7 +5,16 @@
     <link>https://ajf8729.com/tags/configmgr/</link>
     <description>Recent content in ConfigMgr on AJF8729</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 23 Nov 2022 15:24:33 -0500</lastBuildDate><atom:link href="https://ajf8729.com/tags/configmgr/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Dec 2022 08:07:00 -0500</lastBuildDate><atom:link href="https://ajf8729.com/tags/configmgr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modifying Client Settings Priorities With PowerShell</title>
+      <link>https://ajf8729.com/post/modifying-client-settings-priorities/</link>
+      <pubDate>Wed, 07 Dec 2022 08:07:00 -0500</pubDate>
+      
+      <guid>https://ajf8729.com/post/modifying-client-settings-priorities/</guid>
+      <description>How to easily modify ConfigMgr Client Settings priorities with PowerShell</description>
+    </item>
+    
     <item>
       <title>Removing Desktop Analytics from your ConfigMgr Site</title>
       <link>https://ajf8729.com/post/removing-desktop-analytics/</link>
