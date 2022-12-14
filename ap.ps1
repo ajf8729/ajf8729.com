@@ -11,7 +11,4 @@ Write-Host 'Installing WindowsAutopilotIntune module...' -ForegroundColor Green
 Install-Module -Name WindowsAutopilotIntune -Force | Out-Null
 
 Write-Host 'Executing "Get-WindowsAutoPilotInfo -Online -Assign"...' -ForegroundColor Green
-Get-WindowsAutoPilotInfo -Online -Assign
-
-Write-Host 'Restarting computer...' -ForegroundColor Green
-Restart-Computer -Timeout 10
+Get-WindowsAutoPilotInfo -Online -Assign -Reboot
