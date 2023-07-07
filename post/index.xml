@@ -8,6 +8,15 @@
     <language>en</language>
     <lastBuildDate>Sun, 13 Nov 2022 22:08:51 -0500</lastBuildDate><atom:link href="https://ajf8729.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Adding the CCM directory to the PATH variable via ConfigMgr DCM</title>
+      <link>https://ajf8729.com/post/add-ccm-to-path/</link>
+      <pubDate>Fri, 07 Jul 2023 16:00:00 -0400</pubDate>
+      
+      <guid>https://ajf8729.com/post/add-ccm-to-path/</guid>
+      <description>How to add the CCM directory to the PATH variable to make it easier to run CMTrace</description>
+    </item>
+    
+    <item>
       <title>Managing the Registry Settings for CVE-2023-32019 (KB5028407)</title>
       <link>https://ajf8729.com/post/cve-2023-32019-kb5028407-registry-settings/</link>
       <pubDate>Wed, 14 Jun 2023 11:00:00 -0400</pubDate>

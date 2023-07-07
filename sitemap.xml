@@ -2,22 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ajf8729.com/post/add-ccm-to-path/</loc>
+    <lastmod>2023-07-07T16:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://ajf8729.com/</loc>
-    <lastmod>2023-06-14T11:00:00-04:00</lastmod>
+    <lastmod>2023-07-07T16:00:00-04:00</lastmod>
   </url><url>
     <loc>https://ajf8729.com/tags/configmgr/</loc>
-    <lastmod>2023-06-14T11:00:00-04:00</lastmod>
+    <lastmod>2023-07-07T16:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://ajf8729.com/tags/powershell/</loc>
+    <lastmod>2023-07-07T16:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://ajf8729.com/tags/</loc>
+    <lastmod>2023-07-07T16:00:00-04:00</lastmod>
   </url><url>
     <loc>https://ajf8729.com/tags/intune/</loc>
     <lastmod>2023-06-14T11:00:00-04:00</lastmod>
   </url><url>
     <loc>https://ajf8729.com/post/cve-2023-32019-kb5028407-registry-settings/</loc>
-    <lastmod>2023-06-14T11:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://ajf8729.com/tags/powershell/</loc>
-    <lastmod>2023-06-14T11:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://ajf8729.com/tags/</loc>
     <lastmod>2023-06-14T11:00:00-04:00</lastmod>
   </url><url>
     <loc>https://ajf8729.com/post/modifying-client-settings-priorities/</loc>
