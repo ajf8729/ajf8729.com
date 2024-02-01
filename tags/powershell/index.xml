@@ -6,11 +6,11 @@
     <description>Recent content in PowerShell on AJF8729</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Feb 2024 09:20:00 -0500</lastBuildDate><atom:link href="https://ajf8729.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://ajf8729.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A silly PowerShell function to determine when this month&#39;s Patch Tuesday is</title>
       <link>https://ajf8729.com/post/get-patchtuesday/</link>
-      <pubDate>Thu, 01 Feb 2024 09:20:00 -0500</pubDate>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ajf8729.com/post/get-patchtuesday/</guid>
       <description>A silly PowerShell function to determine when this month&amp;rsquo;s Patch Tuesday is</description>
