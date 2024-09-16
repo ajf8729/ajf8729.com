@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SQL on AJF8729</title>
+    <link>https://ajf8729.com/tags/sql/</link>
+    <description>Recent content in SQL on AJF8729</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://ajf8729.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL query to get hardware hashes from your ConfigMgr site database</title>
+      <link>https://ajf8729.com/post/exporting-hardware-hashes-from-configmgr/</link>
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajf8729.com/post/exporting-hardware-hashes-from-configmgr/</guid>
+      <description>A quick SQL query to get all hardware hashes out of your ConfigMgr site database</description>
+    </item>
+    
+  </channel>
+</rss>

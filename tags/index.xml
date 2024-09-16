@@ -6,7 +6,25 @@
     <description>Recent content in Tags on AJF8729</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://ajf8729.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://ajf8729.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intune</title>
+      <link>https://ajf8729.com/tags/intune/</link>
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajf8729.com/tags/intune/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>https://ajf8729.com/tags/sql/</link>
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajf8729.com/tags/sql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>PowerShell</title>
       <link>https://ajf8729.com/tags/powershell/</link>
@@ -22,15 +40,6 @@
       <pubDate>Fri, 07 Jul 2023 16:00:00 -0400</pubDate>
       
       <guid>https://ajf8729.com/tags/configmgr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Intune</title>
-      <link>https://ajf8729.com/tags/intune/</link>
-      <pubDate>Wed, 14 Jun 2023 11:00:00 -0400</pubDate>
-      
-      <guid>https://ajf8729.com/tags/intune/</guid>
       <description></description>
     </item>
     
